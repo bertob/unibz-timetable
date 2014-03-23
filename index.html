@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>unibz timetable</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <script type="text/x-handlebars">
+    <section class="container">
+      {{outlet}}
+    </section>
+  </script>
+ 
+  <script type="text/x-handlebars" id="index">
+    {{#each day in model}}
+    <section class="day">
+      <h2 class="date">{{day.date}}</h2>
+
+      {{#each lecture in day.lectures}}
+      <section class="lecture">
+        <h4 class="room">{{lecture.room}}</h4>
+        <div class="info">
+          <h4 class="time">{{lecture.time}}</h4>
+          <h3 class="title">{{lecture.title}}</h3>
+          <h4 class="prof">{{lecture.prof}}</h4>
+        </div>
+      </section>
+      {{/each}}
+      
+    </section>
+    {{/each}}    
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.4.0.js"></script>
+  <script src="js/libs/moment.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

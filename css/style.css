@@ -103,3 +103,10 @@ button, input {
   margin: 0.3em 0;
   font-size: 1em;
 }
+
+input {
+  width: 100%;
+  margin-top: 2.5em;
+  padding: 1em;
+  font-size: 1.2em;
+}

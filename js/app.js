@@ -26,30 +26,37 @@ App.IndexRoute = Ember.Route.extend({
 					// contentSnippet: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE - F3.04 Office, Ser-F - Mariacher Christian
 					// title: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE
 
-					var descrSpaceArray = descr.split(" ");
-					var date = descrSpaceArray[0];
+					var descrArray = descr.split(" - ");
+					
+					var date = descrArray[0];
 					date = moment(date, "DD.MM.YYYY").format("dddd, MMMM D");
 
-					var time = descrSpaceArray[2];
+					var time = descrArray[1];
 					var timeArray = time.split("-");
 					time = timeArray[0] + " – " + timeArray[1];
 
-					var descrDashArray = descr.split("-");
-					var course = descrDashArray[3].substr(1, descrDashArray[3].length - 2);
-					var room = descrDashArray[4] + descrDashArray[5];
+					var course = descrArray[2].substr(0, descrArray[2].length);
+					course = course.replaceAll(" Ex ", " ");
+					course = course.replaceAll(" Pt.2 ", " ");
+					course = course.replaceAll(" Pt. 2 ", " ");
+					course = course.replaceAll("Software Engineering and Software Project", "SESP");
 					
-					console.log("old: " + room);
+					var room = descrArray[3];
 					room = room.replaceAll(".", "");
-					console.log("new: " + room);
+					room = room.substr(0,4);
+					room = room.substr(0,1) + " " + room.substr(1, room.length);
 					
-					room = room.substr(1,4);
-					room = room.substr(0,1) + " " + room.substr(1,room.length);
-					var prof = descrDashArray[6].substr(1, descrDashArray[6].length);
+					var prof = descrArray[4]; //.substr(1, descrArray[6].length);
+					if (prof == "") {
+						prof = "Professor";
+					}
 
 					console.log();
 					console.log("date: " + date + "; \ntime: " + time + "; \ncourse: " + course + "; \nroom: " + room + "; \nprof: " + prof);
-
-					formattedData.push({date: date, title: course, time: time, room: room, prof: prof});
+					
+					if (course.indexOf("OFFICE") === -1) {
+						formattedData.push({date: date, title: course, time: time, room: room, prof: prof});
+					}
 				});
 			}
 			groupedData = groupByDays(formattedData);

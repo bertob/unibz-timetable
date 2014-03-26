@@ -119,6 +119,13 @@ button, input {
   	-webkit-transform: translateY(-0.65em);
 	}
 }
+.room, .time {
+	font-feature-settings: 'tnum';
+	-moz-font-feature-settings: 'tnum';
+	-webkit-font-feature-settings: 'tnum';
+	-ms-font-feature-settings: 'tnum';
+}
+
 .info {
   display: inline-block;
   width: 65%;

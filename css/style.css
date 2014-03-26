@@ -5,25 +5,35 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Fira Sans", Roboto, Helvetica, Segoe, Arial, sans-serif;
-  font-size: 16px;
   font-weight: 500;
   color: #333;
 }
 
 html,
 body {
-  height: 100%;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-size: 16px;
   line-height: 1.5;
   color: #454441;
   background-color: #eee;
 }
+body {
+	font-size: 16px;
+}
 @media screen and (max-width: 600px) {
 	body {
-		
+		font-size: 13px;
+	}
+}
+@media screen and (max-width: 450px) {
+	body {
+		font-size: 12px;
+	}
+}
+@media screen and (max-width: 350px) {
+	body {
+		font-size: 11px;
 	}
 }
 
@@ -62,6 +72,16 @@ button, input {
   width: 80%;
   margin: 0 auto;
 }
+@media (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  .container {
+    width: 95%;
+  }
+}
 @media (min-width: 1000px) {
   .container {
     width: 60%;
@@ -89,6 +109,15 @@ button, input {
   font-size: 4em;
   font-weight: 800;
   transform: translateY(-0.5em);
+  -webkit-transform: translateY(-0.5em);
+}
+@media screen and (max-width: 720px) {
+	.room {
+		width: 2.8em;
+		font-size: 3.6em;
+		transform: translateY(-0.65em);
+  	-webkit-transform: translateY(-0.65em);
+	}
 }
 .info {
   display: inline-block;
@@ -96,10 +125,15 @@ button, input {
 }
 @media screen and (max-width: 720px) {
 	.info {
-		width: 50%;
+		width: 59%;
 	}
 }
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 450px) {
+	.info {
+		width: 53%;
+	}
+}
+@media screen and (max-width: 140px) {
 	.info {
 		width: 35%;
 	}

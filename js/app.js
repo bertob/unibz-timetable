@@ -101,6 +101,8 @@ App.IndexRoute = Ember.Route.extend({
 					course = course.replaceAll(" Pt. 2 ", " ");
 					course = course.replaceAll(" SS14 ", " ");
 
+					course = specialReplacements(course);
+
 					var room = descrArray[3];
 					room = room.replaceAll(".", "");
 					room = room.substr(0, 4);
@@ -113,8 +115,6 @@ App.IndexRoute = Ember.Route.extend({
 
 					var color = addColor(course);
 					console.log("YOOO! The color is " + color);
-
-					course = specialReplacements(course);
 
 					console.log();
 					console.log("date: " + date + "; \ntime: " + time + "; \ncourse: " + course + "; \nroom: " + room + "; \nprof: " + prof + "; \ncolor: " + color);
@@ -223,8 +223,8 @@ function addColor(newCourseTitle) {
 		var newTitle = simplifyTitle(newCourseTitle);
 		console.log(newTitle + "###########" + oldTitle)
 		var substring = lcs(oldTitle, newTitle);
-		console.log(substring.length >= Math.floor(newTitle.length / 3));
-		if ((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring)) { // Course already exists and has a color
+		console.log((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3));
+		if ((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3)) { // Course already exists and has a color
 			var existingHash = oldCourse.title.hashCode();
 			console.log("---------------> " + substring);
 			returnColor = hashColors[existingHash];

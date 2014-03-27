@@ -93,7 +93,6 @@ App.IndexRoute = Ember.Route.extend({
 					course = course.replaceAll(" Ex ", " ");
 					course = course.replaceAll(" Pt.2 ", " ");
 					course = course.replaceAll(" Pt. 2 ", " ");
-					course = course.replaceAll("Software Engineering and Software Project", "SESP");
 
 					var room = descrArray[3];
 					room = room.replaceAll(".", "");
@@ -108,6 +107,8 @@ App.IndexRoute = Ember.Route.extend({
 					var color = addColor(course);
 					console.log("YOOO! The color is " + color);
 
+					course = specialReplacements(course);
+					
 					console.log();
 					console.log("date: " + date + "; \ntime: " + time + "; \ncourse: " + course + "; \nroom: " + room + "; \nprof: " + prof + "; \ncolor: " + color);
 
@@ -190,9 +191,14 @@ function replaceStuffInTitles(title) {
 	return newtitle;
 }
 
+function specialReplacements(course) {
+	course = course.replaceAll("Software Engineering and Software Project", "SESP");
+	return course;
+}
+
 function addColor(newCourseTitle) {
 	var returnColor;
-	var exitsingColor = false;
+	var existingColor = false;
 	
 	formattedData.every(function (oldCourse) {
 		oldTitle = replaceStuffInTitles(oldCourse.title);
@@ -203,17 +209,18 @@ function addColor(newCourseTitle) {
 		if (substring.length >= Math.floor(newTitle.length / 3)) { // Course already exists and has a color
 			var existingHash = oldCourse.title.hashCode();
 			console.log("---------------> " + substring);
-			retrunColor = hashColors[existingHash];
-			exitsingColor = true;
+			returnColor = hashColors[existingHash];
+			existingColor = true;
 			return false;
 		}
 	});
 
-	if (!exitsingColor) {
+	if (!existingColor) {
 		// Course doesn't exitst yet, assign new color
 		var newHash = newCourseTitle.hashCode();
 		if (newColors.length > 0) {
 			var newColorIndex = Math.floor(Math.random() * newColors.length);
+			//var newColorIndex = Math.floor(NewHash / colors.length);
 			hashColors[newHash] = newColorIndex;
 			newColors.remove(newColorIndex);
 			returnColor = hashColors[newHash];

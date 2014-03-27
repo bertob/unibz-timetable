@@ -81,7 +81,7 @@ App.IndexRoute = Ember.Route.extend({
 					console.log("description: " + e.contentSnippet);
 					*/
 					var title = e.title;
-					var descr = e.contentSnippet;
+					var descr = e.content;
 					// Example Response:
 					// contentSnippet: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE - F3.04 Office, Ser-F - Mariacher Christian
 					// title: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE
@@ -100,6 +100,8 @@ App.IndexRoute = Ember.Route.extend({
 					course = course.replaceAll(" Pt.2 ", " ");
 					course = course.replaceAll(" Pt. 2 ", " ");
 					course = course.replaceAll(" SS14 ", " ");
+					course = course.replaceAll(" (", ", ");
+					course = course.replaceAll(")", "");
 
 					course = specialReplacements(course);
 

@@ -241,7 +241,7 @@ function addColor(newCourseTitle) {
 		if (newColors.length > 0) {
 			var newColorIndex = Math.floor(Math.random() * newColors.length);
 			//var newColorIndex = Math.floor(NewHash / colors.length);
-			hashColors[newHash] = newColorIndex;
+			hashColors[newHash] = newColors[newColorIndex];
 			newColors.remove(newColorIndex);
 			returnColor = hashColors[newHash];
 		} else {

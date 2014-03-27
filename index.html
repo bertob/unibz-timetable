@@ -22,12 +22,13 @@
       <h2 class="date">{{day.date}}</h2>
 
       {{#each lecture in day.lectures}}
-      <section class="lecture">
+      <section id="{{lecture.color}}" class="lecture">
         <h4 class="room">{{lecture.room}}</h4>
         <div class="info">
           <h4 class="time">{{lecture.time}}</h4>
           <h3 class="title">{{lecture.title}}</h3>
           <h4 class="prof">{{lecture.prof}}</h4>
+					<span class="color"></span>
         </div>
       </section>
       {{/each}}

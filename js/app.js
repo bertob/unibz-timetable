@@ -57,10 +57,16 @@ var colors = ["475368",
 							"ca6595",
 							"a87732",
 				 			];
-var newColors = [0,1,2,3,4,5,6,7,8,9,10,11,12];
+var newColors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 var usedColors = [];
 var hashColors = {};
+
+var titleBlackList = [
+							" Systems ",
+							" Systems",
+							"Systems",
+							];
 
 App.IndexRoute = Ember.Route.extend({
 	model: function () {
@@ -93,6 +99,7 @@ App.IndexRoute = Ember.Route.extend({
 					course = course.replaceAll(" Ex ", " ");
 					course = course.replaceAll(" Pt.2 ", " ");
 					course = course.replaceAll(" Pt. 2 ", " ");
+					course = course.replaceAll(" SS14 ", " ");
 
 					var room = descrArray[3];
 					room = room.replaceAll(".", "");
@@ -108,11 +115,11 @@ App.IndexRoute = Ember.Route.extend({
 					console.log("YOOO! The color is " + color);
 
 					course = specialReplacements(course);
-					
+
 					console.log();
 					console.log("date: " + date + "; \ntime: " + time + "; \ncourse: " + course + "; \nroom: " + room + "; \nprof: " + prof + "; \ncolor: " + color);
 
-					if (course.indexOf("OFFICE") === -1) {
+					if ((course.indexOf("OFFICE") === -1) && (course.indexOf(" B LAB") === -1)) {
 						formattedData.push({
 							date: date,
 							title: course,
@@ -182,7 +189,7 @@ function getQueryVariable() {
 	return variable;
 }
 
-function replaceStuffInTitles(title) {
+function simplifyTitle(title) {
 	var newtitle = title.replaceAll(" LECT", "");
 	var newtitle = newtitle.replaceAll(" EXERCISE", "");
 	var newtitle = newtitle.replaceAll(" LAB", "");
@@ -192,30 +199,43 @@ function replaceStuffInTitles(title) {
 }
 
 function specialReplacements(course) {
+	//course = course.replaceAll("LECT", "LECTURE");
 	course = course.replaceAll("Software Engineering and Software Project", "SESP");
 	return course;
+}
+
+function checkBlacklist(substring) {
+	returnValue = true;
+	titleBlackList.forEach(function (blacklisted) {
+		if (substring === blacklisted) returnValue = false;
+	});
+	return returnValue;
 }
 
 function addColor(newCourseTitle) {
 	var returnColor;
 	var existingColor = false;
-	
-	formattedData.every(function (oldCourse) {
-		oldTitle = replaceStuffInTitles(oldCourse.title);
-		newTitle = replaceStuffInTitles(newCourseTitle);
+	var count = 0;
+	formattedData.some(function (oldCourse) {
+		//if (oldCourse != formattedData[0]) alert("NOOOOOOOOOOOO");
+		count++;
+		var oldTitle = simplifyTitle(oldCourse.title);
+		var newTitle = simplifyTitle(newCourseTitle);
 		console.log(newTitle + "###########" + oldTitle)
 		var substring = lcs(oldTitle, newTitle);
 		console.log(substring.length >= Math.floor(newTitle.length / 3));
-		if (substring.length >= Math.floor(newTitle.length / 3)) { // Course already exists and has a color
+		if ((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring)) { // Course already exists and has a color
 			var existingHash = oldCourse.title.hashCode();
 			console.log("---------------> " + substring);
 			returnColor = hashColors[existingHash];
 			existingColor = true;
-			return false;
+			return true;
 		}
+		console.log("stuff");
 	});
-
+	console.log("ÖÖÖÖÖÖÖÖÖÖÖÖÖÖ  " + count);
 	if (!existingColor) {
+		console.log("ADDING COLOR YO");
 		// Course doesn't exitst yet, assign new color
 		var newHash = newCourseTitle.hashCode();
 		if (newColors.length > 0) {

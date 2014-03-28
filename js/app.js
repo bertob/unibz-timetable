@@ -1,7 +1,7 @@
 App = Ember.Application.create();
 
-formattedData = [];
-groupedData = [];
+var formattedData = [];
+var groupedData = [];
 var numOfLectures = 50;
 var rssfeed = "";
 var googleApiUrl = '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=' + numOfLectures + '&callback=?&q=';
@@ -16,32 +16,6 @@ var feedUrl = 'https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?show
 
 // Engineering:
 // http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=16093&dep=9475&spoid=16095&format=rss
-
-/*
-var colors = ["2b2b2b",
-							"272935",
-							"3a4055",
-							"5a647e",
-							"d4cfc9",
-							"e6e1dc",
-							"f4f1ed",
-							"f9f7f3",
-							"da4939",
-							"cc7833",
-							"ffc66d",
-							"a5c261",
-							"519f50",
-							"6d9cbe",
-							"b6b3eb",
-							"bc9458",
-				 			];
-var colors = ["3a4055",
-							"5a647e",
-							"da4939",					
-							"519f50",
-							"bc9458",
-				 			];
-							*/
 
 var colors = ["475368",
 							"637a8a",
@@ -76,46 +50,83 @@ App.IndexRoute = Ember.Route.extend({
 			if (data.responseData.feed && data.responseData.feed.entries) {
 				$.each(data.responseData.feed.entries, function (i, e) {
 					/*
-					console.log("------------------------");
-					console.log("title      : " + e.title);
-					console.log("description: " + e.contentSnippet);
+						console.log("------------------------");
+						console.log("title      : " + e.title);
+						console.log("description: " + e.content);
 					*/
+					// Example Response:
+					// title: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE
+					// content: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE - F3.04 Office, Ser-F - Mariacher Christian
+					
 					var title = e.title;
 					var descr = e.content;
-					// Example Response:
-					// contentSnippet: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE - F3.04 Office, Ser-F - Mariacher Christian
-					// title: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE
-
+					
 					var descrArray = descr.split(" - ");
+					var date, time, course, room, prof, color;
+					var l = descrArray.length;
+					if (descr.indexOf(" PROJECT ") !== -1) {
+						date = descrArray[0];
+						time = descrArray[1];
+						course = descrArray[2];
+						for (var j = 3; j <= l - 2; j++) {
+							course += " - " + descrArray[j];
+						}
+						room = descrArray[l - 1];
+						prof = "Project";
+					} else {
+						date = descrArray[0];
+						time = descrArray[1];
+						course = descrArray[2];
+						for (var k = 3; k <= l - 3; k++) {
+							course += descrArray[k];
+						}
+						room = descrArray[l - 2];
+						prof = descrArray[l - 1];
+					}
 
-					var date = descrArray[0];
+
+
+					/*if (descrArray.length === 5) {
+									date = descrArray[0];
+									time = descrArray[1];
+									course = descrArray[2].substr(0, descrArray[2].length);
+									room = descrArray[3];
+									prof = descrArray[4];
+								} else { // works for 6 or more, assuming only the title can contain the splitting sequence
+									var l = descrArray.length;
+									date = descrArray[0];
+									time = descrArray[1];
+									course = descrArray[2];
+									for (var j = 3; j <= l - 3; j++) {
+										course += descrArray[j];
+									}
+									room = descrArray[l - 2];
+									prof = descrArray[l - 1];
+								}*/
+
 					date = moment(date, "DD.MM.YYYY").format("dddd, MMMM D");
 
-					var time = descrArray[1];
 					time = time.replaceAll("-", " – ");
 
-					var course = descrArray[2].substr(0, descrArray[2].length);
 					course = course.replaceAll("_", " ");
 					course = course.replaceAll(" Ex ", " ");
 					course = course.replaceAll(" Pt.2 ", " ");
 					course = course.replaceAll(" Pt. 2 ", " ");
 					course = course.replaceAll(" SS14 ", " ");
+					course = course.replaceAll(" SE14 ", " ");
+					course = course.replaceAll(" -SS ", " ");
+					course = course.replaceAll("-SS", "");
 					course = course.replaceAll(" (", ", ");
 					course = course.replaceAll(")", "");
+					course = course.replaceAll("&amp;", "&");
 
 					course = specialReplacements(course);
 
-					var room = descrArray[3];
 					room = room.replaceAll(".", "");
 					room = room.substr(0, 4);
 					room = room.substr(0, 1) + " " + room.substr(1, room.length);
 
-					var prof = descrArray[4]; //.substr(1, descrArray[6].length);
-					if (prof === "") {
-						prof = "Professor";
-					}
-
-					var color = addColor(course);
+					color = addColor(course);
 					console.log("YOOO! The color is " + color);
 
 					console.log();
@@ -193,10 +204,10 @@ function getQueryVariable() {
 
 function simplifyTitle(title) {
 	var newtitle = title.replaceAll(" LECT", "");
-	var newtitle = newtitle.replaceAll(" EXERCISE", "");
-	var newtitle = newtitle.replaceAll(" LAB", "");
-	var newtitle = newtitle.replaceAll("  LAB", "");
-	var newtitle = newtitle.replaceAll("  ", " ");
+	newtitle = newtitle.replaceAll(" EXERCISE", "");
+	newtitle = newtitle.replaceAll(" LAB", "");
+	newtitle = newtitle.replaceAll("  LAB", "");
+	newtitle = newtitle.replaceAll("  ", " ");
 	return newtitle;
 }
 
@@ -207,7 +218,7 @@ function specialReplacements(course) {
 }
 
 function checkBlacklist(substring) {
-	returnValue = true;
+	var returnValue = true;
 	titleBlackList.forEach(function (blacklisted) {
 		if (substring === blacklisted) returnValue = false;
 	});
@@ -223,7 +234,7 @@ function addColor(newCourseTitle) {
 		count++;
 		var oldTitle = simplifyTitle(oldCourse.title);
 		var newTitle = simplifyTitle(newCourseTitle);
-		console.log(newTitle + "###########" + oldTitle)
+		console.log(newTitle + "###########" + oldTitle);
 		var substring = lcs(oldTitle, newTitle);
 		console.log((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3));
 		if ((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3)) { // Course already exists and has a color
@@ -346,10 +357,10 @@ function addColor(course) {
 
 
 function lcs(lcstest, lcstarget) {
-	matchfound = 0
+	var matchfound = 0;
 	lsclen = lcstest.length;
 	for (lcsi = 0; lcsi < lcstest.length; lcsi++) {
-		lscos = 0
+		lscos = 0;
 		for (lcsj = 0; lcsj < lcsi + 1; lcsj++) {
 			re = new RegExp("(?:.{" + lscos + "})(.{" + lsclen + "})", "i");
 			temp = re.test(lcstest);
@@ -417,7 +428,7 @@ String.prototype.replaceAll = function (str1, str2, ignore) {
 String.prototype.hashCode = function () {
 	var hash = 0,
 		i, char;
-	if (this.length == 0) return hash;
+	if (this.length === 0) return hash;
 	for (i = 0, l = this.length; i < l; i++) {
 		char = this.charCodeAt(i);
 		hash = ((hash << 5) - hash) + char;

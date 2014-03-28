@@ -48,7 +48,7 @@ Right here:
 ![screenshot](docs/screenshot-1.png)
 
 ###Why are the room names so big?
-Because for how I use it, that's the most important information on the timetable. Also, it looks cool.
+Because for how I use it, that's by far the most important information on the timetable. Also, it looks cool.
 
 ###I found a bug/would like to suggest a feature!
 Great, thanks.

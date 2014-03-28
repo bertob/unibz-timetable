@@ -57,10 +57,10 @@ App.IndexRoute = Ember.Route.extend({
 					// Example Response:
 					// title: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE
 					// content: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE - F3.04 Office, Ser-F - Mariacher Christian
-					
+
 					var title = e.title;
 					var descr = e.content;
-					
+
 					var descrArray = descr.split(" - ");
 					var date, time, course, room, prof, color;
 					var l = descrArray.length;
@@ -83,26 +83,6 @@ App.IndexRoute = Ember.Route.extend({
 						room = descrArray[l - 2];
 						prof = descrArray[l - 1];
 					}
-
-
-
-					/*if (descrArray.length === 5) {
-									date = descrArray[0];
-									time = descrArray[1];
-									course = descrArray[2].substr(0, descrArray[2].length);
-									room = descrArray[3];
-									prof = descrArray[4];
-								} else { // works for 6 or more, assuming only the title can contain the splitting sequence
-									var l = descrArray.length;
-									date = descrArray[0];
-									time = descrArray[1];
-									course = descrArray[2];
-									for (var j = 3; j <= l - 3; j++) {
-										course += descrArray[j];
-									}
-									room = descrArray[l - 2];
-									prof = descrArray[l - 1];
-								}*/
 
 					date = moment(date, "DD.MM.YYYY").format("dddd, MMMM D");
 
@@ -127,10 +107,9 @@ App.IndexRoute = Ember.Route.extend({
 					room = room.substr(0, 1) + " " + room.substr(1, room.length);
 
 					color = addColor(course);
-					console.log("YOOO! The color is " + color);
-
-					console.log();
+					
 					console.log("date: " + date + "; \ntime: " + time + "; \ncourse: " + course + "; \nroom: " + room + "; \nprof: " + prof + "; \ncolor: " + color);
+					console.log("----------------------------------");
 
 					if ((course.indexOf("OFFICE") === -1) && (course.indexOf(" B LAB") === -1)) {
 						formattedData.push({
@@ -154,7 +133,7 @@ function groupByDays(a) {
 	var groupedArray = [];
 	var j = 0;
 	for (var i = 0; i < a.length; i++) {
-		console.log(a[i].title);
+		//console.log(a[i].title);
 
 		if (groupedArray[0] === undefined) {
 			groupedArray.push({
@@ -194,6 +173,7 @@ function groupByDays(a) {
 	return groupedArray;
 }
 
+// Gets RSS feed from parameter in URL, retruns hardcoded feed if there is none in the URL
 function getQueryVariable() {
 	var query = window.location.search.substring(1);
 	var variable = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
@@ -228,27 +208,22 @@ function checkBlacklist(substring) {
 function addColor(newCourseTitle) {
 	var returnColor;
 	var existingColor = false;
-	var count = 0;
 	formattedData.some(function (oldCourse) {
-		//if (oldCourse != formattedData[0]) alert("NOOOOOOOOOOOO");
-		count++;
 		var oldTitle = simplifyTitle(oldCourse.title);
 		var newTitle = simplifyTitle(newCourseTitle);
-		console.log(newTitle + "###########" + oldTitle);
+		//console.log("new: " + newTitle + "  old: " + oldTitle);
 		var substring = lcs(oldTitle, newTitle);
-		console.log((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3));
-		if ((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3)) { // Course already exists and has a color
+		//console.log((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3));
+		if ((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3)) {
+			// Course already exists and has a color
 			var existingHash = oldCourse.title.hashCode();
-			console.log("---------------> " + substring);
 			returnColor = hashColors[existingHash];
 			existingColor = true;
 			return true;
 		}
-		console.log("stuff");
 	});
-	console.log("ÖÖÖÖÖÖÖÖÖÖÖÖÖÖ  " + count);
 	if (!existingColor) {
-		console.log("ADDING COLOR YO");
+		console.log("Adding new color");
 		// Course doesn't exitst yet, assign new color
 		var newHash = newCourseTitle.hashCode();
 		if (newColors.length > 0) {
@@ -264,97 +239,37 @@ function addColor(newCourseTitle) {
 		}
 	}
 	return returnColor;
-
-	/*
-	formattedData.forEach(function (oldCourse) {
-		var substring = lcs(oldCourse.title, newCourseTitle);
-		if (substring.length >= Math.floor(newCourseTitle.length / 3)) { // Already exists and has a color
-			var existingHash = oldCourse.title.hashCode();
-			return hashColors[existingHash];
-		} else { // Doesn't exitst yet, assign new color
-			var newHash = newCourseTitle.hashCode();
-			if (newColors.length > 0) {
-				var newColorIndex = Math.floor(Math.random() * newColors.length);
-				hashColors[newHash] = newColorIndex;
-				newColors.remove(newColorIndex);
-				return hashColors[newHash];
-			} else {
-				var newColorIndex = Math.floor(Math.random() * colors.length);
-				hashColors[newHash] = newColorIndex;
-				return hashColors[newHash];
-			}
-		}
-	});*/
-	/*
-	for (var i = 0; i < formattedData.length; i++) {
-		var substring = lcs(formattedData[i].title, course);
-		console.log(formattedData[i].title + " --> " + course);
-		console.log(course + "substring: " + substring);
-		if (substring.length >= Math.floor(course.length / 3)) { // Already exists and has a color
-			var existingHash = formattedData[i].title.hashCode();
-			console.log("LOOOL " + existingHash);
-			console.log("OLD HASH: " + existingHash + " # " + hashColors[existingHash] + " title: " + formattedData[i].title + " substr: " + substring);
-			console.log(formattedData);
-			return hashColors[existingHash];
-		} else { // Doesn't exitst yet, assign new color
-			for (var j = 0; j < 100; j++) { //just try for a sufficiently large number of times
-				var colorNo = Math.floor(Math.random() * colors.length);
-				var hash = course.hashCode();
-				var used = false;
-				usedColors.forEach(function (usedColor) {
-					if (colorNo === usedColor) used = true;
-				});
-				if (used === false) {
-					usedColors.push(colorNo);
-					hashColors[hash] = colorNo;
-					console.log("NEW HASH: " + hash + " # " + colorNo + " title: " + course);
-					return colorNo;
-				}
-			}
-			var colorNo = Math.floor(Math.random() * colors.length);
-			usedColors.push(colorNo);
-			return colorNo;
-		}
-	}
-	*/
-
 }
 
-/*
-function addColor(course) {
-	for (var i = 0; i < formattedData.length; i++) {
-		var substring = lcs(formattedData[i].title, course);
-		console.log(formattedData[i].title + " --> " + course);
-		console.log(course + "substring: " + substring);
-		if (substring.length >= Math.floor(course.length / 3)) { // Already exists and has a color
-			var existingHash = formattedData[i].title.hashCode();
-			console.log("LOOOL " + existingHash);
-			console.log("OLD HASH: " + existingHash + " # " + hashColors[existingHash] + " title: " +  formattedData[i].title + " substr: " + substring);
-			console.log(formattedData);
-			return hashColors[existingHash];
-		} else { // Doesn't exitst yet, assign new color
-			for (var j = 0; j < 100; j++) { //just try for a sufficiently large number of times
-				var colorNo = Math.floor(Math.random() * colors.length);
-				var hash = course.hashCode();
-				var used = false;
-				usedColors.forEach(function (usedColor) {
-					if (colorNo === usedColor) used = true;
-				});
-				if (used === false) {
-					usedColors.push(colorNo);
-					hashColors[hash] = colorNo;
-					console.log("NEW HASH: " + hash + " # " + colorNo + " title: " + course);
-					return colorNo;
-				}
-			}
-			var colorNo = Math.floor(Math.random() * colors.length);
-			usedColors.push(colorNo);
-			return colorNo;
-		}
+App.IndexView = Ember.View.extend({
+	didInsertElement: function () {
+		this._super();
 	}
-}
-*/
+});
 
+// Applies colors after Ember has rendered the view
+Ember.View.reopen({
+	didInsertElement: function () {
+		this._super();
+		Ember.run.scheduleOnce('afterRender', this, this.afterRenderEvent);
+	},
+	afterRenderEvent: function () {
+		var testColor = "ff0044";
+		$('.lecture').each(
+			function () {
+				var elem = $(this);
+				var idColor = $(this).attr("id").split("script")[2];
+				idColor = idColor.substr(1, idColor.length - 2);
+				var colorCode = colors[idColor];
+				$(this).children().css("color", "#" + colorCode);
+				$(this).children().children().css("color", "#" + colorCode);
+			}
+		);
+
+	}
+});
+
+/* UTILITY FUNCTIONS */
 
 function lcs(lcstest, lcstarget) {
 	var matchfound = 0;
@@ -381,45 +296,6 @@ function lcs(lcstest, lcstarget) {
 	result = "";
 	return result;
 }
-
-App.IndexView = Ember.View.extend({
-	didInsertElement: function () {
-		this._super();
-	}
-});
-
-Ember.View.reopen({
-	didInsertElement: function () {
-		this._super();
-		Ember.run.scheduleOnce('afterRender', this, this.afterRenderEvent);
-	},
-	afterRenderEvent: function () {
-		// implement this hook in your own subclasses and run your jQuery logic there
-		/*
-		var divs = $(".lecture"); 
-		$.each(divs ,function (i, val) {
-			$(val).css("color", "red");
-			//alert("Yo " + elem.className);
-		});
-		*/
-		var testColor = "ff0044";
-		$('.lecture').each(
-			function () {
-				var elem = $(this);
-				//var idColor = $(this).attr('id');
-				var idColor = $(this).attr("id").split("script")[2];
-				idColor = idColor.substr(1, idColor.length - 2);
-				var colorCode = colors[idColor];
-				//alert("class: " + idColor);
-				//alert("class: " + $(this).attr("class"));
-				//alert("code: " + colorCode);
-				$(this).children().css("color", "#" + colorCode);
-				$(this).children().children().css("color", "#" + colorCode);
-			}
-		);
-
-	}
-});
 
 String.prototype.replaceAll = function (str1, str2, ignore) {
 	return this.replace(new RegExp(str1.replace(/([\/\,\!\\\^\$\{\}\[\]\(\)\.\*\+\?\|\<\>\-\&])/g, "\\$&"), (ignore ? "gi" : "g")), (typeof (str2) == "string") ? str2.replace(/\$/g, "$$$$") : str2);

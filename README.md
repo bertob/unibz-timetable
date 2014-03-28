@@ -43,6 +43,9 @@ For example, you want your course's official timetable, you can just go to the t
 
 ###I don't understand the guides above
 If you have any problems setting up your timetable, just [shoot me an email](hi@tobiasbernard.com).
+###Where are the screenshots?
+Right here:
+![screenshot](docs/screenshot-1.png)
 
 ###Why are the room names so big?
 Because for how I use it, that's the most important information on the timetable. Also, it looks cool.

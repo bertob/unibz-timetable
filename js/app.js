@@ -107,9 +107,9 @@ App.IndexRoute = Ember.Route.extend({
 					room = room.substr(0, 1) + " " + room.substr(1, room.length);
 
 					color = addColor(course);
-					
-					console.log("date: " + date + "; \ntime: " + time + "; \ncourse: " + course + "; \nroom: " + room + "; \nprof: " + prof + "; \ncolor: " + color);
+
 					console.log("----------------------------------");
+					console.log("date: " + date + "; \ntime: " + time + "; \ncourse: " + course + "; \nroom: " + room + "; \nprof: " + prof + "; \ncolor: " + color);
 
 					if ((course.indexOf("OFFICE") === -1) && (course.indexOf(" B LAB") === -1)) {
 						formattedData.push({
@@ -177,9 +177,23 @@ function groupByDays(a) {
 function getQueryVariable() {
 	var query = window.location.search.substring(1);
 	var variable = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
-	if (variable == null) variable = feedUrl;
+	stored = localStorage.getItem('rssfeed');
+	if (variable == null) {
+		variable = feedUrl;
+		if (stored !== null) {
+			variable = stored;
+		}
+		else {
+			variable = feedUrl;
+		}
+	}
+	localStorage.setItem('rssfeed', variable);
 	console.log("request url: " + variable);
 	return variable;
+}
+
+function clearLocalStorage() {
+	localStorage.removeItem('rssfeed');
 }
 
 function simplifyTitle(title) {

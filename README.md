@@ -3,7 +3,9 @@ unibz-timetable
 
 A simple timetable based on the unibz timetable RSS feed.
 
-It looks like this: [tobiasbernard.com/unibz-timetable](tobiasbernard.com/unibz-timetable)
+It's a fully client-side web app using the Google Feeds API to get the data from the RSS feed and Ember.js to dynamically render the results.
+
+Check it out [here](http://tobiasbernard.com/unibz-timetable).
 
 ***This site is still in development and not very well tested, so if you encounter any problems specific to your device/browser, please report them.***
 

@@ -5,7 +5,7 @@ A simple timetable based on the unibz timetable RSS feed.
 
 It looks like this: [tobiasbernard.com/unibz-timetable](tobiasbernard.com/unibz-timetable)
 
-***This site is still in development and not very well tested, so if you encounter any problems specific to your device/browser, please report them .***
+***This site is still in development and not very well tested, so if you encounter any problems specific to your device/browser, please report them.***
 
 ##FAQ
 
@@ -52,4 +52,4 @@ Because for how I use it, that's by far the most important information on the ti
 
 ###I found a bug/would like to suggest a feature!
 Great, thanks.
-You can either [file an issue](https://github.com/bertob/unibz-timetable/issues) on Github repo or [email me](hi@tobiasbernard.com).
+You can either [file an issue](https://github.com/bertob/unibz-timetable/issues) on Github or [email me](hi@tobiasbernard.com).

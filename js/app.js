@@ -17,19 +17,19 @@ var feedUrl = 'https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?show
 // Engineering:
 // http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=16093&dep=9475&spoid=16095&format=rss
 
-var colors = ["964042", //red
-							"da4939",
-							"d97726", //orange
-							"d1a635", //yellow
-							"78a03e", //green
-							"428141",
-							"53a5a6", //blue
-							"488092",
-							"4b5464",
-							"9767ac", //violet
-							"6a3d78",
-							"c35589", //purple
-							"9c3964",
+var colors = ["#78a03e",
+							"#da4939",
+							"#4b5464",							
+							"#53a5a6",
+							"#428141", 
+							"#d1a635", ////							
+							"#d97726",
+							"#488092",							
+							"#9767ac",
+							"#6a3d78",
+							"#c35589",
+							"#9c3964",
+							"#964042",							
 				 			];
 var newColors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -178,6 +178,9 @@ function getQueryVariable() {
 	var query = window.location.search.substring(1);
 	var variable = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
 	stored = localStorage.getItem('rssfeed');
+	if (variable="tb") {
+		variable = feedUrl;
+	}
 	if (variable == null) {
 		variable = feedUrl;
 		if (stored !== null) {
@@ -241,7 +244,7 @@ function addColor(newCourseTitle) {
 		// Course doesn't exitst yet, assign new color
 		var newHash = newCourseTitle.hashCode();
 		if (newColors.length > 0) {
-			var newColorIndex = Math.floor(Math.random() * newColors.length);
+			var newColorIndex = 0;//Math.floor(Math.random() * newColors.length);
 			//var newColorIndex = Math.floor(NewHash / colors.length);
 			hashColors[newHash] = newColors[newColorIndex];
 			newColors.remove(newColorIndex);
@@ -275,8 +278,8 @@ Ember.View.reopen({
 				var idColor = $(this).attr("id").split("script")[2];
 				idColor = idColor.substr(1, idColor.length - 2);
 				var colorCode = colors[idColor];
-				$(this).children().css("color", "#" + colorCode);
-				$(this).children().children().css("color", "#" + colorCode);
+				$(this).children().css("color", colorCode);
+				$(this).children().children().css("color", colorCode);
 			}
 		);
 

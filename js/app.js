@@ -17,19 +17,19 @@ var feedUrl = 'https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?show
 // Engineering:
 // http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=16093&dep=9475&spoid=16095&format=rss
 
-var colors = ["475368",
-							"637a8a",
+var colors = ["964042", //red
 							"da4939",
-							"cca233",
-							"94b646",
+							"d97726", //orange
+							"d1a635", //yellow
+							"78a03e", //green
 							"428141",
-							"6dafbe",
-							"805b26",
-							"61386e",
-							"8367ac",
-							"b02561",
-							"ca6595",
-							"a87732",
+							"53a5a6", //blue
+							"488092",
+							"4b5464",
+							"9767ac", //violet
+							"6a3d78",
+							"c35589", //purple
+							"9c3964",
 				 			];
 var newColors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -50,9 +50,9 @@ App.IndexRoute = Ember.Route.extend({
 			if (data.responseData.feed && data.responseData.feed.entries) {
 				$.each(data.responseData.feed.entries, function (i, e) {
 					/*
-						console.log("------------------------");
-						console.log("title      : " + e.title);
-						console.log("description: " + e.content);
+					console.log("------------------------");
+					console.log("title      : " + e.title);
+					console.log("description: " + e.content);
 					*/
 					// Example Response:
 					// title: 08.03.2014 - 13:30-14:30 - OFFICE: Typography and Graphics OFFICE

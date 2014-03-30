@@ -171,3 +171,44 @@ input {
   padding: 1em;
   font-size: 1.2em;
 }
+
+/* ######## NOSCRIPT ########*/
+
+.nsc {
+	width: 40%;
+	margin: 2em auto;
+}
+@media screen and (max-width: 1200px) {
+	.nsc {
+		width: 60%;
+	}
+}
+@media screen and (max-width: 1000px) {
+	.nsc {
+		width: 80%;
+	}
+}
+.nsc-head {
+	font-size: 5em;
+	font-weight: 800;
+	letter-spacing: 0.02em;
+}
+@media screen and (max-width: 650px) {
+	.nsc-head {
+		font-size: 4em;
+	}
+}
+@media screen and (max-width: 450px) {
+	.nsc-head {
+		font-size: 3.7em;
+	}
+}
+.nsc-subhead {
+	margin: 1em 0;
+	font-size: 1.8em;
+}
+.nsc-txt {
+	margin: 1em 0;
+	font-size: 1.2em;
+	font-weight: 400;
+}

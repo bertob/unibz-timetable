@@ -43,8 +43,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="16"
-     inkscape:cx="-19.614089"
-     inkscape:cy="8.5005047"
+     inkscape:cx="-4.7390894"
+     inkscape:cy="9.6255047"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -99,7 +99,9 @@
        id="path3337"
        cx="318"
        cy="264.36218"
-       r="8" />
+       r="8"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <rect
        style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#287ac8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
        id="rect4630"

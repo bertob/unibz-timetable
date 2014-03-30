@@ -42,9 +42,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="16"
-     inkscape:cx="-4.7390894"
-     inkscape:cy="9.6255047"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="572.72859"
+     inkscape:cy="5.213099"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -74,7 +74,7 @@
     <inkscape:grid
        type="xygrid"
        id="grid4319"
-       originx="-310px"
+       originx="-210px"
        originy="-780px" />
   </sodipodi:namedview>
   <metadata
@@ -93,24 +93,769 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-310,-256.36218)">
-    <circle
-       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#287ac8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
-       id="path3337"
-       cx="318"
-       cy="264.36218"
-       r="8"
+     transform="translate(-210,-256.36218)">
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       transform="matrix(0,1,-1,0,0,0)"
+       y="-1324"
+       x="128.36214"
+       height="144"
+       width="144"
+       id="rect6882"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect3334"
+       width="144"
+       height="144"
+       x="128.36214"
+       y="-504"
+       transform="matrix(0,1,-1,0,0,0)"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
     <rect
-       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#287ac8;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
-       id="rect4630"
-       width="16"
-       height="16"
-       x="256.36218"
-       y="-296"
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
        transform="matrix(0,1,-1,0,0,0)"
-       inkscape:export-xdpi="810"
-       inkscape:export-ydpi="810" />
+       y="-226"
+       x="256.36218"
+       height="16"
+       width="16"
+       id="rect3266"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect3284"
+       width="18"
+       height="13.881228"
+       x="199.75"
+       y="288.86218" />
+    <rect
+       y="288.86218"
+       x="217.75"
+       height="13.881228"
+       width="18"
+       id="rect3289"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#d1a635;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#488092;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect3291"
+       width="18"
+       height="13.881228"
+       x="235.75"
+       y="288.86218" />
+    <rect
+       y="288.86218"
+       x="253.75"
+       height="13.881228"
+       width="18"
+       id="rect3293"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect3295"
+       width="18"
+       height="13.881228"
+       x="271.75"
+       y="288.86218" />
+    <rect
+       y="288.86218"
+       x="289.75"
+       height="13.881228"
+       width="18"
+       id="rect3297"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect3299"
+       width="3"
+       height="1.9999974"
+       x="212"
+       y="258.36218" />
+    <rect
+       y="258.36218"
+       x="217"
+       height="1.9999895"
+       width="7"
+       id="rect3301"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <rect
+       y="268.36218"
+       x="212"
+       height="1.999993"
+       width="3"
+       id="rect3303"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect3305"
+       width="7"
+       height="1.9999895"
+       x="217"
+       y="268.36218" />
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect3307"
+       width="3"
+       height="1.999993"
+       x="212"
+       y="263.36218" />
+    <rect
+       y="263.36218"
+       x="217"
+       height="1.9999895"
+       width="7"
+       id="rect3309"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       transform="matrix(0,1,-1,0,0,0)"
+       y="-484"
+       x="148.36214"
+       height="104"
+       width="104"
+       id="rect3364"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <g
+       id="g6815">
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect3366"
+         width="44"
+         height="5.9999976"
+         x="421"
+         y="162.36218" />
+      <rect
+         y="190.36214"
+         x="380"
+         height="20.000084"
+         width="27"
+         id="rect3374"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect3376"
+         width="49"
+         height="9.0000429"
+         x="421"
+         y="190.36214" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect3336"
+         width="27"
+         height="20.000084"
+         x="380"
+         y="148.36214" />
+      <rect
+         y="148.36214"
+         x="421"
+         height="9.0000429"
+         width="63"
+         id="rect3338"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         y="204.36218"
+         x="421"
+         height="5.9999976"
+         width="63"
+         id="rect3378"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect3380"
+         width="27"
+         height="20.000084"
+         x="380"
+         y="232.36214" />
+      <rect
+         y="232.36214"
+         x="421"
+         height="9.0000429"
+         width="63"
+         id="rect3382"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect3384"
+         width="49"
+         height="5.9999976"
+         x="421"
+         y="246.36218" />
+    </g>
+    <g
+       id="g6575-4"
+       transform="translate(864.52272,-126.9449)">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3813-5-4"
+         y="198.36211"
+         x="549"
+         style="font-size:27.5px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         xml:space="preserve"><tspan
+           y="198.36211"
+           x="549"
+           id="tspan3815-7-0"
+           sodipodi:role="line">Thursday, February 27.</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3817-2-5"
+         y="323.36215"
+         x="774"
+         style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4b5464;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         xml:space="preserve"><tspan
+           y="323.36215"
+           x="774"
+           id="tspan3819-8-4"
+           sodipodi:role="line"
+           style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#4b5464;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium">Distributed Systems</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4b5464;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         x="774"
+         y="353.36215"
+         id="text3821-8-4"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#4b5464;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+           sodipodi:role="line"
+           id="tspan3823-0-5"
+           x="774"
+           y="353.36215">Werner Wild</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#78a03e;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         x="774"
+         y="463.36215"
+         id="text3827-0-6"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#78a03e;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+           sodipodi:role="line"
+           id="tspan3829-9-6"
+           x="774"
+           y="463.36215">SESP</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3831-2-7"
+         y="493.36215"
+         x="774"
+         style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#78a03e;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         xml:space="preserve"><tspan
+           y="493.36215"
+           x="774"
+           id="tspan3833-2-6"
+           sodipodi:role="line"
+           style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#78a03e;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium">Ilenia Fronza, Luis Corral</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3837-1-7"
+         y="603.36206"
+         x="774"
+         style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#da4939;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         xml:space="preserve"><tspan
+           y="603.36206"
+           x="774"
+           id="tspan3839-2-1"
+           sodipodi:role="line"
+           style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#da4939;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium">Typography and Graphics</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#da4939;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         x="774"
+         y="633.36206"
+         id="text3841-0-8"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#da4939;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+           sodipodi:role="line"
+           id="tspan3843-4-3"
+           x="774"
+           y="633.36206">Christian Mariacher</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3845-1-4"
+         y="293.36212"
+         x="773"
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4b5464;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         xml:space="preserve"><tspan
+           y="293.36212"
+           x="773"
+           id="tspan3847-2-0"
+           sodipodi:role="line"
+           style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#4b5464;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold">10:30 - 12:30</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#78a03e;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         x="773"
+         y="433.36215"
+         id="text3849-6-0"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#78a03e;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+           sodipodi:role="line"
+           id="tspan3851-4-8"
+           x="773"
+           y="433.36215">14:00 - 16:00</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3853-1-2"
+         y="573.36206"
+         x="773"
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#da4939;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         xml:space="preserve"><tspan
+           y="573.36206"
+           x="773"
+           id="tspan3855-3-5"
+           sodipodi:role="line"
+           style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#da4939;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold">16:30 - 19:30</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3857-4-2"
+         y="463.36215"
+         x="544"
+         style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#78a03e;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         xml:space="preserve"><tspan
+           y="463.36215"
+           x="544"
+           id="tspan3859-4-8"
+           sodipodi:role="line"
+           style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#78a03e;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold">C 201</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#da4939;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         x="544"
+         y="603.36206"
+         id="text3861-7-4"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#da4939;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+           sodipodi:role="line"
+           id="tspan3863-1-4"
+           x="544"
+           y="603.36206">F 003</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3865-9-9"
+         y="323.36215"
+         x="544"
+         style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4b5464;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         xml:space="preserve"><tspan
+           id="tspan3867-3-8"
+           y="323.36215"
+           x="544"
+           sodipodi:role="line"
+           style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#4b5464;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold">E 220</tspan></text>
+    </g>
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect6884"
+       width="104"
+       height="104"
+       x="148.36214"
+       y="-1304"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g6886"
+       transform="translate(820,0)"
+       style="fill:#eeeeee">
+      <rect
+         y="162.36218"
+         x="421"
+         height="5.9999976"
+         width="44"
+         id="rect6888"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6890"
+         width="27"
+         height="20.000084"
+         x="380"
+         y="190.36214" />
+      <rect
+         y="190.36214"
+         x="421"
+         height="9.0000429"
+         width="49"
+         id="rect6892"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         y="148.36214"
+         x="380"
+         height="20.000084"
+         width="27"
+         id="rect6894"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6896"
+         width="63"
+         height="9.0000429"
+         x="421"
+         y="148.36214" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6898"
+         width="63"
+         height="5.9999976"
+         x="421"
+         y="204.36218" />
+      <rect
+         y="232.36214"
+         x="380"
+         height="20.000084"
+         width="27"
+         id="rect6900"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6902"
+         width="63"
+         height="9.0000429"
+         x="421"
+         y="232.36214" />
+      <rect
+         y="246.36218"
+         x="421"
+         height="5.9999976"
+         width="49"
+         id="rect6904"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    </g>
+    <g
+       transform="matrix(0.24219409,0,0,0.24219409,1067.5683,92.138608)"
+       id="g6826">
+      <text
+         xml:space="preserve"
+         style="font-size:27.5px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         x="549"
+         y="198.36211"
+         id="text6828"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan6830"
+           x="549"
+           y="198.36211">Thursday, February 27.</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4b5464;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         x="774"
+         y="323.36215"
+         id="text6832"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#4b5464;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+           sodipodi:role="line"
+           id="tspan6834"
+           x="774"
+           y="323.36215">Distributed Systems</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text6836"
+         y="353.36215"
+         x="774"
+         style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4b5464;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         xml:space="preserve"><tspan
+           y="353.36215"
+           x="774"
+           id="tspan6838"
+           sodipodi:role="line"
+           style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#4b5464;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium">Werner Wild</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text6840"
+         y="463.36215"
+         x="774"
+         style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#78a03e;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         xml:space="preserve"><tspan
+           y="463.36215"
+           x="774"
+           id="tspan6842"
+           sodipodi:role="line"
+           style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#78a03e;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium">SESP</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#78a03e;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+         x="774"
+         y="493.36215"
+         id="text6844"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#78a03e;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+           sodipodi:role="line"
+           id="tspan6846"
+           x="774"
+           y="493.36215">Ilenia Fronza, Luis Corral</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4b5464;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         x="773"
+         y="293.36212"
+         id="text6848"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#4b5464;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+           sodipodi:role="line"
+           id="tspan6850"
+           x="773"
+           y="293.36212">8:30 - 10:30</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text6852"
+         y="433.36215"
+         x="773"
+         style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#78a03e;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         xml:space="preserve"><tspan
+           y="433.36215"
+           x="773"
+           id="tspan6854"
+           sodipodi:role="line"
+           style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#78a03e;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold">14:00 - 16:00</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#78a03e;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         x="544"
+         y="463.36215"
+         id="text6856"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#78a03e;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+           sodipodi:role="line"
+           id="tspan6858"
+           x="544"
+           y="463.36215">C 201</tspan></text>
+      <g
+         id="g6860">
+        <text
+           sodipodi:linespacing="125%"
+           id="text6862"
+           y="603.36206"
+           x="774"
+           style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#da4939;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+           xml:space="preserve"><tspan
+             y="603.36206"
+             x="774"
+             id="tspan6864"
+             sodipodi:role="line"
+             style="font-size:22.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#da4939;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium">Database Systems</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#da4939;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+           x="774"
+           y="633.36206"
+           id="text6866"
+           sodipodi:linespacing="125%"><tspan
+             style="font-size:17.5px;font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;fill:#da4939;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Medium"
+             sodipodi:role="line"
+             id="tspan6868"
+             x="774"
+             y="633.36206">Sven Helmer</tspan></text>
+        <text
+           sodipodi:linespacing="125%"
+           id="text6870"
+           y="573.36206"
+           x="773"
+           style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#da4939;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+           xml:space="preserve"><tspan
+             y="573.36206"
+             x="773"
+             id="tspan6872"
+             sodipodi:role="line"
+             style="font-size:30px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#da4939;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold">14:00 - 16:00</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#da4939;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+           x="544"
+           y="603.36206"
+           id="text6874"
+           sodipodi:linespacing="125%"><tspan
+             style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#da4939;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+             sodipodi:role="line"
+             id="tspan6876"
+             x="544"
+             y="603.36206">F 003</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#4b5464;fill-opacity:1;stroke:none;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+         x="544"
+         y="323.36215"
+         id="text6878"
+         sodipodi:linespacing="125%"><tspan
+           style="font-size:80px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#4b5464;fill-opacity:1;font-family:Fira Sans;-inkscape-font-specification:Fira Sans Bold"
+           sodipodi:role="line"
+           x="544"
+           y="323.36215"
+           id="tspan6880">E 220</tspan></text>
+    </g>
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       transform="matrix(0,1,-1,0,0,0)"
+       y="-684"
+       x="128.36214"
+       height="144"
+       width="144"
+       id="rect6906"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect6908"
+       width="104"
+       height="104"
+       x="148.36214"
+       y="-664"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g6910"
+       transform="translate(180,0)">
+      <rect
+         y="170.36218"
+         x="420"
+         height="5.9999976"
+         width="40"
+         id="rect6912"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6914"
+         width="27"
+         height="20.000084"
+         x="385"
+         y="190.36214" />
+      <rect
+         y="190.36214"
+         x="420"
+         height="9.0000429"
+         width="45"
+         id="rect6916"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         y="156.36214"
+         x="385"
+         height="20.000084"
+         width="27"
+         id="rect6918"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6920"
+         width="59"
+         height="9.0000429"
+         x="420"
+         y="156.36214" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6922"
+         width="59"
+         height="5.9999976"
+         x="420"
+         y="204.36218" />
+      <rect
+         y="224.36214"
+         x="385"
+         height="20.000084"
+         width="27"
+         id="rect6924"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6926"
+         width="59"
+         height="9.0000429"
+         x="420"
+         y="224.36214" />
+      <rect
+         y="238.36218"
+         x="420"
+         height="5.9999976"
+         width="45"
+         id="rect6928"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    </g>
+    <rect
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+       id="rect6930"
+       width="144"
+       height="144"
+       x="128.36214"
+       y="-864"
+       transform="matrix(0,1,-1,0,0,0)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       transform="matrix(0,1,-1,0,0,0)"
+       y="-844"
+       x="148.36214"
+       height="104"
+       width="104"
+       id="rect6932"
+       style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#eeeeee;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+    <g
+       transform="translate(360,0)"
+       id="g6934">
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6936"
+         width="40"
+         height="5"
+         x="420"
+         y="171.36218" />
+      <rect
+         y="190.36214"
+         x="385"
+         height="20.000084"
+         width="27"
+         id="rect6938"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6940"
+         width="45"
+         height="8.0000429"
+         x="420"
+         y="190.36214" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6942"
+         width="27"
+         height="20.000084"
+         x="385"
+         y="156.36214" />
+      <rect
+         y="156.36214"
+         x="420"
+         height="8.000041"
+         width="59"
+         id="rect6944"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#da4939;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         y="205.36218"
+         x="420"
+         height="5"
+         width="59"
+         id="rect6946"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#78a03e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6948"
+         width="27"
+         height="20.000084"
+         x="385"
+         y="224.36214" />
+      <rect
+         y="224.36214"
+         x="420"
+         height="8.0000429"
+         width="59"
+         id="rect6950"
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto" />
+      <rect
+         style="color:#000000;color-interpolation:sRGB;color-interpolation-filters:linearRGB;fill:#4b5464;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:6;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;clip-rule:nonzero;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto"
+         id="rect6952"
+         width="45"
+         height="5"
+         x="420"
+         y="239.36218" />
+    </g>
   </g>
 </svg>

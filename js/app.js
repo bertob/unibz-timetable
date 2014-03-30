@@ -16,13 +16,14 @@ var feedUrl = 'https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?show
 
 // Engineering:
 // http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=16093&dep=9475&spoid=16095&format=rss
+// http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=16093&dep=9475&spoid=22475&format=rss
 
-var colors = ["#78a03e",
-							"#da4939",
+var colors = ["#da4939",
 							"#4b5464",							
 							"#53a5a6",
 							"#428141", 
-							"#d1a635", ////							
+							"#d1a635", ////	
+							"#78a03e",
 							"#d97726",
 							"#488092",							
 							"#9767ac",
@@ -211,6 +212,7 @@ function simplifyTitle(title) {
 function specialReplacements(course) {
 	//course = course.replaceAll("LECT", "LECTURE");
 	course = course.replaceAll("Software Engineering and Software Project", "SESP");
+	course = course.replaceAll(" A LAB", " LAB");
 	return course;
 }
 

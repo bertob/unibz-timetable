@@ -60,9 +60,14 @@ var titleBlackList = [
 							" Systems",
 							"Systems",
 							];
+var firstUse = true;
+
 
 App.IndexRoute = Ember.Route.extend({
 	model: function () {
+		if (localStorage.getItem("rssfeed") != null) firstUse = false;
+		//alert (localStorage.getItem("rssfeed"));
+	
 		rssfeed = getQueryVariable();
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed)).then(function (data) {
@@ -285,8 +290,30 @@ function inputUrl() {
 	//var url = $("#url-input").value;
 	var url = document.getElementById("url-input").value;
 	localStorage.setItem("rssfeed", url);
-	alert(localStorage.getItem("rssfeed"));
 	document.location.reload();
+}
+
+function toggleInput() {
+	//$("#arrow").removeClass("rotate");
+	//$("#arrow").addClass("rotate");
+	//$("#arrow").toggleClass("rotate");
+	if ($("#topbar").hasClass("visible-topbar")) {
+		$("#topbar").removeClass("visible-topbar");
+		$("#topbar").addClass("hidden-topbar");
+	}
+	else {
+		$("#topbar").removeClass("hiden-topbar");
+		$("#topbar").addClass("visible-topbar");
+	}
+	
+	if ($("#arrow").hasClass("up")) {
+		$("#arrow").removeClass("up");
+		$("#arrow").addClass("down");
+	}
+	else {
+		$("#arrow").removeClass("down");
+		$("#arrow").addClass("up");
+	}
 }
 
 App.IndexView = Ember.View.extend({
@@ -302,6 +329,7 @@ Ember.View.reopen({
 		Ember.run.scheduleOnce("afterRender", this, this.afterRenderEvent);
 	},
 	afterRenderEvent: function () {
+		// set lecture colors
 		var testColor = "ff0044";
 		$(".lecture").each(
 			function () {
@@ -313,6 +341,14 @@ Ember.View.reopen({
 				$(this).children().children().css("color", colorCode);
 			}
 		);
+		
+		// hide input if not first use
+		if (!firstUse) {
+			$("#topbar").removeClass("visible-topbar");
+			$("#topbar").addClass("hidden-topbar");
+			$("#arrow").removeClass("up");
+			$("#arrow").addClass("down");
+		}
 
 	}
 });

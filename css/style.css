@@ -188,17 +188,40 @@ input {
 	position: relative;
 	top: 0.3em;
 }
-.url-input {
-	width: 80%;
+.permanent {
+	visibility: hidden;
+	background-color: transparent;
+	text-align: right;
 }
-@media screen and (max-width: 700px) {
+.permanent > * {
+	visibility: visible;
+}
+.hidden-topbar {
+	transform: translateY(-10em);
+  transition: transform 0.5s ease-out;
+  -webkit-transition: transform 0.2s ease-out;
+}
+.visible-topbar {
+	transform: translateY(0);
+  transition: transform 0.3s ease-out;
+  -webkit-transition: transform 0.2s ease-out;
+}
+.url-input {
+	width: 76%;
+}
+@media screen and (min-width: 850px) {
 	.url-input {
-		width: 80%;
+		width: 82%;
 	}
 }
-@media screen and (max-width: 400px) {
+@media screen and (min-width: 1400px) {
 	.url-input {
-		width: 80%;
+		width: 85%;
+	}
+}
+@media screen and (max-width: 440px) {
+	.url-input {
+		width: 68%;
 	}
 }
 .url-button {
@@ -207,17 +230,31 @@ input {
 	color: #fff;
 }
 .icon {
+	position: relative;
+	top: 1.5em;
 	height: 3em;
 	margin-left: 1em;
 	padding: 0.3em;
-	transform: translateY(1.2em);
+	//transform: translateY(1.2em);
 	-webkit-transform: translateY(1.2em);
 	cursor: pointer;
 }
 .icon:hover {
-	background-color: #ddd;
+	//background-color: #ddd;
 }
 .update {
+}
+.up {
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transition: transform 0.2s ease-out;
+	-webkit-transition: transform 0.2s ease-out;
+}
+.down {
+	transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	transition: transform 0.2s ease-out;
+	-webkit-transition: transform 0.2s ease-out;
 }
 /* ######## NOSCRIPT ########*/
 

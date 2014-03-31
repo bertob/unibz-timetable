@@ -6,8 +6,26 @@ var numOfLectures = 50;
 var rssfeed = "";
 var googleApiUrl = '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=' + numOfLectures + '&callback=?&q=';
 
-var feedUrl = 'https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?showtype=0&sfdid=VJ6o9VkicIEJBLePjA936w%3d%3d&format=rss';
+//var feedUrl = 'https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?showtype=0&sfdid=VJ6o9VkicIEJBLePjA936w%3d%3d&format=rss';
 
+var urls = {
+	"tb": "https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?showtype=0&sfdid=VJ6o9VkicIEJBLePjA936w%3d%3d&format=rss",
+	// Computer Schience Bachelor
+	"cs1": "",
+	"cs2": "",
+	"cs3": "",
+	// Mechanical Engineering
+	"me1": "",
+	"me2": "",
+	"me3": "",
+	// Design
+	"da1": "",
+	"da2": "",
+	"da3": "",
+	// Management
+
+	// PPE
+}
 // Economy:
 // http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=12724%2c16965&dep=1043&spoid=16966&format=rss
 
@@ -19,18 +37,18 @@ var feedUrl = 'https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?show
 // http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=16093&dep=9475&spoid=22475&format=rss
 
 var colors = ["#da4939",
-							"#4b5464",							
+							"#4b5464",
 							"#53a5a6",
-							"#428141", 
+							"#428141",
 							"#d1a635", ////	
 							"#78a03e",
 							"#d97726",
-							"#488092",							
+							"#488092",
 							"#9767ac",
 							"#6a3d78",
 							"#c35589",
 							"#9c3964",
-							"#964042",							
+							"#964042",
 				 			];
 var newColors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -49,6 +67,7 @@ App.IndexRoute = Ember.Route.extend({
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed)).then(function (data) {
 			if (data.responseData.feed && data.responseData.feed.entries) {
+				//alert("Localstorage: " + localStorage.getItem('rssfeed'));
 				$.each(data.responseData.feed.entries, function (i, e) {
 					/*
 					console.log("------------------------");
@@ -179,15 +198,17 @@ function getQueryVariable() {
 	var query = window.location.search.substring(1);
 	var variable = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
 	stored = localStorage.getItem('rssfeed');
-	if (variable="tb") {
-		variable = feedUrl;
+
+	for (var key in urls) {
+		var item = urls[key];
+		if (variable === key) {
+			variable = item;
+		}
 	}
 	if (variable == null) {
-		variable = feedUrl;
 		if (stored !== null) {
 			variable = stored;
-		}
-		else {
+		} else {
 			variable = feedUrl;
 		}
 	}
@@ -246,7 +267,7 @@ function addColor(newCourseTitle) {
 		// Course doesn't exitst yet, assign new color
 		var newHash = newCourseTitle.hashCode();
 		if (newColors.length > 0) {
-			var newColorIndex = 0;//Math.floor(Math.random() * newColors.length);
+			var newColorIndex = 0; //Math.floor(Math.random() * newColors.length);
 			//var newColorIndex = Math.floor(NewHash / colors.length);
 			hashColors[newHash] = newColors[newColorIndex];
 			newColors.remove(newColorIndex);
@@ -258,6 +279,13 @@ function addColor(newCourseTitle) {
 		}
 	}
 	return returnColor;
+}
+
+function inputUrl() {
+	//var url = $("#url-input").value;
+	var url = document.getElementById("url-input").value;
+	localStorage.setItem('rssfeed', url);
+	document.location.reload();
 }
 
 App.IndexView = Ember.View.extend({

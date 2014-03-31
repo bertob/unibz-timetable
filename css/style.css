@@ -172,6 +172,19 @@ input {
   font-size: 1.2em;
 }
 
+/* ######## INPUT AREA ########*/
+
+.url-input {
+	display: inline-block;
+	width: 74%;
+}
+.url-button {
+	display: inline-block;
+	width: 25%;
+	background-color: #999;
+	color: #fff;
+}
+
 /* ######## NOSCRIPT ########*/
 
 .nsc {

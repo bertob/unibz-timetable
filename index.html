@@ -15,6 +15,10 @@
 
   <script type="text/x-handlebars">
     <section class="container">
+		<header class="input-area">
+			<input class="url-input" id="url-input" type="text" placeholder="Paste your RSS feed URL here">
+			<input class="url-button" type="button" onclick="inputUrl();" value="Update">
+		</header>
       {{outlet}}
     </section>
   </script>
@@ -43,7 +47,7 @@
 	<noscript>
 		<section class="nsc">
 			<h1 class="nsc-head">I CAN HAZ JS?</h1>
-			<p class="nsc-subhead">Good Job, you're using NoScript!</p>
+			<p class="nsc-subhead">Good job, you're using NoScript!</p>
 			<p class="nsc-txt">Unfortunately, this website does not work without Javascript. It is needed to get the RSS feed data from the Google Feed API and to generate HTML from it dynamically with Ember.</p>
 			<p class="nsc-txt">I'm terribly sorry, but there's just no other way in this case.</p>
 			<p class="nsc-txt"><3 Tobias</p>

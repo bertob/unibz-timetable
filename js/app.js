@@ -4,9 +4,9 @@ var formattedData = [];
 var groupedData = [];
 var numOfLectures = 50;
 var rssfeed = "";
-var googleApiUrl = '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=' + numOfLectures + '&callback=?&q=';
+var googleApiUrl = "//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + numOfLectures + "&callback=?&q=";
 
-//var feedUrl = 'https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?showtype=0&sfdid=VJ6o9VkicIEJBLePjA936w%3d%3d&format=rss';
+//var feedUrl = "https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?showtype=0&sfdid=VJ6o9VkicIEJBLePjA936w%3d%3d&format=rss";
 
 var urls = {
 	"tb": "https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?showtype=0&sfdid=VJ6o9VkicIEJBLePjA936w%3d%3d&format=rss",
@@ -14,7 +14,7 @@ var urls = {
 	"cs1": "",
 	"cs2": "",
 	"cs3": "",
-	// Mechanical Engineering
+	// Mechanical Engineering Bachelor
 	"me1": "",
 	"me2": "",
 	"me3": "",
@@ -67,7 +67,7 @@ App.IndexRoute = Ember.Route.extend({
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed)).then(function (data) {
 			if (data.responseData.feed && data.responseData.feed.entries) {
-				//alert("Localstorage: " + localStorage.getItem('rssfeed'));
+				//alert("Localstorage: " + localStorage.getItem("rssfeed"));
 				$.each(data.responseData.feed.entries, function (i, e) {
 					/*
 					console.log("------------------------");
@@ -197,7 +197,7 @@ function groupByDays(a) {
 function getQueryVariable() {
 	var query = window.location.search.substring(1);
 	var variable = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
-	stored = localStorage.getItem('rssfeed');
+	var stored = localStorage.getItem("rssfeed");
 
 	for (var key in urls) {
 		var item = urls[key];
@@ -209,16 +209,16 @@ function getQueryVariable() {
 		if (stored !== null) {
 			variable = stored;
 		} else {
-			variable = feedUrl;
+			variable = urls["tb"];
 		}
 	}
-	localStorage.setItem('rssfeed', variable);
+	localStorage.setItem("rssfeed", variable);
 	console.log("request url: " + variable);
 	return variable;
 }
 
 function clearLocalStorage() {
-	localStorage.removeItem('rssfeed');
+	localStorage.removeItem("rssfeed");
 }
 
 function simplifyTitle(title) {
@@ -264,7 +264,7 @@ function addColor(newCourseTitle) {
 	});
 	if (!existingColor) {
 		console.log("Adding new color");
-		// Course doesn't exitst yet, assign new color
+		// Course doesn"t exitst yet, assign new color
 		var newHash = newCourseTitle.hashCode();
 		if (newColors.length > 0) {
 			var newColorIndex = 0; //Math.floor(Math.random() * newColors.length);
@@ -284,7 +284,8 @@ function addColor(newCourseTitle) {
 function inputUrl() {
 	//var url = $("#url-input").value;
 	var url = document.getElementById("url-input").value;
-	localStorage.setItem('rssfeed', url);
+	localStorage.setItem("rssfeed", url);
+	alert(localStorage.getItem("rssfeed"));
 	document.location.reload();
 }
 
@@ -298,11 +299,11 @@ App.IndexView = Ember.View.extend({
 Ember.View.reopen({
 	didInsertElement: function () {
 		this._super();
-		Ember.run.scheduleOnce('afterRender', this, this.afterRenderEvent);
+		Ember.run.scheduleOnce("afterRender", this, this.afterRenderEvent);
 	},
 	afterRenderEvent: function () {
 		var testColor = "ff0044";
-		$('.lecture').each(
+		$(".lecture").each(
 			function () {
 				var elem = $(this);
 				var idColor = $(this).attr("id").split("script")[2];
@@ -342,6 +343,21 @@ function lcs(lcstest, lcstarget) {
 	}
 	result = "";
 	return result;
+}
+
+function validURL(str) {
+  var pattern = new RegExp("^(https?:\/\/)?"+ // protocol
+    "((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|"+ // domain name
+    "((\d{1,3}\.){3}\d{1,3}))"+ // OR ip (v4) address
+    "(\:\d+)?(\/[-a-z\d%_.~+]*)*"+ // port and path
+    "(\?[;&a-z\d%_.~+=-]*)?"+ // query string
+    "(\#[-a-z\d_]*)?$","i"); // fragment locater
+  if(!pattern.test(str)) {
+    alert("Please enter a valid URL.");
+    return false;
+  } else {
+    return true;
+  }
 }
 
 String.prototype.replaceAll = function (str1, str2, ignore) {

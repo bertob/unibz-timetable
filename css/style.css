@@ -1,22 +1,21 @@
 /* ######## RESET & TYPOGRAPHY ########*/
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-family: "Fira Sans", Roboto, Helvetica, Segoe, Arial, sans-serif;
-  font-weight: 500;
-  color: #333;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: "Fira Sans", Roboto, Helvetica, Segoe, Arial, sans-serif;
+	font-weight: 500;
+	color: #333;
 }
-
 html,
 body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-  color: #454441;
-  background-color: #eee;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+	color: #454441;
+	background-color: #eee;
 }
 body {
 	font-size: 16px;
@@ -36,99 +35,104 @@ body {
 		font-size: 11px;
 	}
 }
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  line-height: 1.25;
-  text-rendering: optimizeLegibility;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	line-height: 1.25;
+	text-rendering: optimizeLegibility;
 }
-
 p {
-  margin: 0;
+	margin: 0;
 }
 li {
-  color: #888580;
+	color: #888580;
 }
 a {
-  color: #555;
-  text-decoration: none;
+	color: #555;
+	text-decoration: none;
 }
 a:hover,
 a:focus {
-  text-decoration: underline;
+	text-decoration: underline;
 }
-button, input {
-  border-radius: 0;
-  border: none;
-  box-shadow:none;
-  background-image: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
+button,
+input {
+	border-radius: 0;
+	border: none;
+	box-shadow: none;
+	background-image: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 }
-
 /* ######## LAYOUT ########*/
-
 .container {
-  width: 80%;
-  margin: 0 auto;
+	width: 80%;
+	margin: 0 auto;
 }
 @media (max-width: 600px) {
-  .container {
-    width: 90%;
-  }
+	.container {
+		width: 90%;
+	}
 }
 @media (max-width: 400px) {
-  .container {
-    width: 95%;
-  }
+	.container {
+		width: 95%;
+	}
 }
 @media (min-width: 1000px) {
-  .container {
-    width: 60%;
-  }
+	.container {
+		width: 60%;
+	}
 }
 @media (min-width: 1500px) {
-  .container {
-    width: 50%;
-  }
+	.container {
+		width: 50%;
+	}
+}
+.content {
+	margin-top: 6em;
 }
 .day {
-  margin: 3em 0;
+	margin: 3em 0;
 }
 .date {
-  margin-bottom: 1.5em;
-  font-size: 1.4em;
-  font-weight: 800;
+	margin-bottom: 1.5em;
+	font-size: 1.4em;
+	font-weight: 800;
 }
 .lecture {
-  margin: 1em 0;
+	margin: 1em 0;
 }
 .room {
-  display: inline-block;
-  width: 3.1em;
-  font-size: 4em;
-  font-weight: 800;
-  transform: translateY(-0.5em);
-  -webkit-transform: translateY(-0.5em);
+	display: inline-block;
+	width: 3.1em;
+	font-size: 4em;
+	font-weight: 800;
+	transform: translateY(-0.5em);
+	-webkit-transform: translateY(-0.5em);
 }
 @media screen and (max-width: 720px) {
 	.room {
 		width: 2.8em;
 		font-size: 3.6em;
 		transform: translateY(-0.65em);
-  	-webkit-transform: translateY(-0.65em);
+		-webkit-transform: translateY(-0.65em);
 	}
 }
-.room, .time {
+.room,
+.time {
 	font-feature-settings: 'tnum';
 	-moz-font-feature-settings: 'tnum';
 	-webkit-font-feature-settings: 'tnum';
 	-ms-font-feature-settings: 'tnum';
 }
-
 .info {
-  display: inline-block;
-  width: 65%;
+	display: inline-block;
+	width: 65%;
 }
 @media screen and (max-width: 720px) {
 	.info {
@@ -145,46 +149,76 @@ button, input {
 		width: 35%;
 	}
 }
-
 .info > * {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .time {
-  font-size: 1.6em;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+	font-size: 1.6em;
+	font-weight: 600;
+	letter-spacing: 0.04em;
 }
 .title {
-  font-size: 1.4em;
+	font-size: 1.4em;
 }
 .prof {
-  margin: 0.3em 0;
-  font-size: 1em;
+	margin: 0.3em 0;
+	font-size: 1em;
 }
-
 input {
-  width: 100%;
-  margin-top: 2.5em;
-  padding: 1em;
-  font-size: 1.2em;
+	width: 100%;
+	padding: 1em;
+	font-size: 1.2em;
 }
-
 /* ######## INPUT AREA ########*/
 
-.url-input {
+.topbar {
+	position: fixed;
+	top: 0;
+	height: 8em;
+	width: inherit;
+	padding-top: 1em;
+	background-color: #eee;
+	z-index: 100000;
+}
+.topbar > * {
 	display: inline-block;
-	width: 74%;
+	position: relative;
+	top: 0.3em;
+}
+.url-input {
+	width: 80%;
+}
+@media screen and (max-width: 700px) {
+	.url-input {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 400px) {
+	.url-input {
+		width: 80%;
+	}
 }
 .url-button {
-	display: inline-block;
 	width: 25%;
 	background-color: #999;
 	color: #fff;
 }
-
+.icon {
+	height: 3em;
+	margin-left: 1em;
+	padding: 0.3em;
+	transform: translateY(1.2em);
+	-webkit-transform: translateY(1.2em);
+	cursor: pointer;
+}
+.icon:hover {
+	background-color: #ddd;
+}
+.update {
+}
 /* ######## NOSCRIPT ########*/
 
 .nsc {

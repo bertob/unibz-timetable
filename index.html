@@ -15,11 +15,15 @@
 
   <script type="text/x-handlebars">
     <section class="container">
-		<header class="input-area">
-			<input class="url-input" id="url-input" type="text" placeholder="Paste your RSS feed URL here">
-			<input class="url-button" type="button" onclick="inputUrl();" value="Update">
-		</header>
-      {{outlet}}
+			<header class="topbar">
+				<input class="url-input" id="url-input" type="text" placeholder="Paste your RSS feed URL here">
+				<!-- <input class="url-button" type="button" onclick="inputUrl();" value="Update"> -->
+				<img class="icon update" src="img/update.svg" onclick="inputUrl();" alt="Menu">
+				<!-- <img class="icon menu" src="img/menu.svg" onclick="menu()" alt="Menu"> -->
+			</header>
+			<section class="content">
+      	{{outlet}}
+			</section>
     </section>
   </script>
   

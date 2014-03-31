@@ -31,6 +31,7 @@ var urls = {
 
 // Design:
 // http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dep=4182&spoid=17529&format=rss
+// https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?showtype=0&sfdid=%2bmWwDKgzuEhovZFBYypnng%3d%3d&format=rss
 
 // Engineering:
 // http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=16093&dep=9475&spoid=16095&format=rss
@@ -70,7 +71,7 @@ App.IndexRoute = Ember.Route.extend({
 
 		rssfeed = getQueryVariable();
 
-		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed)).then(function (data) {
+		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed) + "&t=" + new Date().getTime()).then(function (data) {
 			if (data.responseData.feed && data.responseData.feed.entries) {
 				//alert("Localstorage: " + localStorage.getItem("rssfeed"));
 				$.each(data.responseData.feed.entries, function (i, e) {

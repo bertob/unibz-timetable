@@ -67,7 +67,7 @@ App.IndexRoute = Ember.Route.extend({
 	model: function () {
 		if (localStorage.getItem("rssfeed") != null) firstUse = false;
 		//alert (localStorage.getItem("rssfeed"));
-	
+
 		rssfeed = getQueryVariable();
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed)).then(function (data) {
@@ -287,10 +287,11 @@ function addColor(newCourseTitle) {
 }
 
 function inputUrl() {
-	//var url = $("#url-input").value;
 	var url = document.getElementById("url-input").value;
-	localStorage.setItem("rssfeed", url);
-	document.location.reload();
+	if (url !== "" && url.length > 20) {
+		localStorage.setItem("rssfeed", url);
+		document.location.reload();
+	}
 }
 
 function toggleInput() {
@@ -300,17 +301,15 @@ function toggleInput() {
 	if ($("#topbar").hasClass("visible-topbar")) {
 		$("#topbar").removeClass("visible-topbar");
 		$("#topbar").addClass("hidden-topbar");
-	}
-	else {
+	} else {
 		$("#topbar").removeClass("hiden-topbar");
 		$("#topbar").addClass("visible-topbar");
 	}
-	
+
 	if ($("#arrow").hasClass("up")) {
 		$("#arrow").removeClass("up");
 		$("#arrow").addClass("down");
-	}
-	else {
+	} else {
 		$("#arrow").removeClass("down");
 		$("#arrow").addClass("up");
 	}
@@ -341,7 +340,7 @@ Ember.View.reopen({
 				$(this).children().children().css("color", colorCode);
 			}
 		);
-		
+
 		// hide input if not first use
 		if (!firstUse) {
 			$("#topbar").removeClass("visible-topbar");
@@ -382,18 +381,18 @@ function lcs(lcstest, lcstarget) {
 }
 
 function validURL(str) {
-  var pattern = new RegExp("^(https?:\/\/)?"+ // protocol
-    "((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|"+ // domain name
-    "((\d{1,3}\.){3}\d{1,3}))"+ // OR ip (v4) address
-    "(\:\d+)?(\/[-a-z\d%_.~+]*)*"+ // port and path
-    "(\?[;&a-z\d%_.~+=-]*)?"+ // query string
-    "(\#[-a-z\d_]*)?$","i"); // fragment locater
-  if(!pattern.test(str)) {
-    alert("Please enter a valid URL.");
-    return false;
-  } else {
-    return true;
-  }
+	var pattern = new RegExp("^(https?:\/\/)?" + // protocol
+		"((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|" + // domain name
+		"((\d{1,3}\.){3}\d{1,3}))" + // OR ip (v4) address
+		"(\:\d+)?(\/[-a-z\d%_.~+]*)*" + // port and path
+		"(\?[;&a-z\d%_.~+=-]*)?" + // query string
+		"(\#[-a-z\d_]*)?$", "i"); // fragment locater
+	if (!pattern.test(str)) {
+		alert("Please enter a valid URL.");
+		return false;
+	} else {
+		return true;
+	}
 }
 
 String.prototype.replaceAll = function (str1, str2, ignore) {

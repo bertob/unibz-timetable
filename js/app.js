@@ -78,7 +78,7 @@ App.IndexRoute = Ember.Route.extend({
 			}
 			if (data.responseData.feed && data.responseData.feed.entries) {
 				//alert("Localstorage: " + localStorage.getItem("rssfeed"));
-					
+				
 				$.each(data.responseData.feed.entries, function (i, e) {
 					/*
 					console.log("------------------------");
@@ -294,9 +294,18 @@ function addColor(newCourseTitle) {
 
 function inputUrl() {
 	var url = document.getElementById("url-input").value;
-	if (url !== "" && url.length > 20) {
+	if (url !== "" && url.length > 30) {
 		localStorage.setItem("rssfeed", url);
 		document.location.reload();
+	}
+	else {
+		//alert("yo");
+		//$(".topbar").each.removeClass("animated shake");
+		//alert("derp");
+		$(".topbar").addClass("shake animated");
+		$('.topbar').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $(this).removeClass("animated shake");
+    });
 	}
 }
 

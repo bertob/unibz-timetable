@@ -69,6 +69,7 @@ input {
 	-webkit-appearance: none;
 }
 /* ######## LAYOUT ########*/
+
 .container {
 	width: 80%;
 	margin: 0 auto;
@@ -182,6 +183,8 @@ input {
 	padding-top: 1em;
 	background-color: #eee;
 	z-index: 100000;
+	-webkit-animation-duration: 0.7s !important;
+  animation-duration: 0.7s !important;
 }
 .topbar > * {
 	display: inline-block;
@@ -198,13 +201,13 @@ input {
 }
 .hidden-topbar {
 	transform: translateY(-10em);
-  transition: transform 0.5s ease-out;
-  -webkit-transition: transform 0.2s ease-out;
+	transition: transform 0.5s ease-out;
+	-webkit-transition: transform 0.2s ease-out;
 }
 .visible-topbar {
 	transform: translateY(0);
-  transition: transform 0.3s ease-out;
-  -webkit-transition: transform 0.2s ease-out;
+	transition: transform 0.3s ease-out;
+	-webkit-transition: transform 0.2s ease-out;
 }
 .url-input {
 	width: 76%;
@@ -218,7 +221,8 @@ input {
 	.url-input {
 		width: 78%;
 	}
-}@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: 1200px) {
 	.url-input {
 		width: 83%;
 	}
@@ -250,10 +254,9 @@ input {
 }
 .icon:hover {
 	//background-color: #ddd;
+
 }
-.update {
-}
-.up {
+.update {} .up {
 	transform: rotate(0deg);
 	-webkit-transform: rotate(0deg);
 	transition: transform 0.2s ease-out;

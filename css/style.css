@@ -72,7 +72,7 @@ input {
 
 .container {
 	width: 80%;
-	margin: 0 auto;
+	margin: 0 auto 9em;
 }
 @media (max-width: 600px) {
 	.container {
@@ -95,7 +95,16 @@ input {
 	}
 }
 .content {
-	margin-top: 8em;
+	/*margin-top: 8em;
+	*/
+	transform: translateY(5em);
+	-webkit-transform: translateY(5em);
+	transition: transform 0.3s ease-out;
+	-webkit-transition: transform 0.3s ease-out;
+}
+.move-up {
+	transform: translateY(0em);
+	-webkit-transform: translateY(0em);	
 }
 .day {
 	margin: 3em 0;
@@ -184,7 +193,7 @@ input {
 	background-color: #eee;
 	z-index: 100000;
 	-webkit-animation-duration: 0.7s !important;
-  animation-duration: 0.7s !important;
+	animation-duration: 0.7s !important;
 }
 .topbar > * {
 	display: inline-block;
@@ -201,13 +210,13 @@ input {
 }
 .hidden-topbar {
 	transform: translateY(-10em);
-	transition: transform 0.5s ease-out;
-	-webkit-transition: transform 0.2s ease-out;
+	transition: transform 0.3s ease-out;
+	-webkit-transition: transform 0.3s ease-out;
 }
 .visible-topbar {
 	transform: translateY(0);
 	transition: transform 0.3s ease-out;
-	-webkit-transition: transform 0.2s ease-out;
+	-webkit-transition: transform 0.3s ease-out;
 }
 .url-input {
 	width: 76%;

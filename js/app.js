@@ -73,12 +73,12 @@ App.IndexRoute = Ember.Route.extend({
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed) + "&t=" + new Date().getTime()).then(function (data) {
 			if (data.responseData == null) {
-					clearLocalStorage();
-					document.location.reload();
+				clearLocalStorage();
+				document.location.reload();
 			}
 			if (data.responseData.feed && data.responseData.feed.entries) {
 				//alert("Localstorage: " + localStorage.getItem("rssfeed"));
-				
+
 				$.each(data.responseData.feed.entries, function (i, e) {
 					/*
 					console.log("------------------------");
@@ -297,30 +297,27 @@ function inputUrl() {
 	if (url !== "" && url.length > 30) {
 		localStorage.setItem("rssfeed", url);
 		document.location.reload();
-	}
-	else {
+	} else {
 		//alert("yo");
 		//$(".topbar").each.removeClass("animated shake");
 		//alert("derp");
 		$(".topbar").addClass("shake animated");
-		$('.topbar').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-      $(this).removeClass("animated shake");
-    });
+		$('.topbar').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+			$(this).removeClass("animated shake");
+		});
 	}
 }
 
 function toggleInput() {
-	//$("#arrow").removeClass("rotate");
-	//$("#arrow").addClass("rotate");
-	//$("#arrow").toggleClass("rotate");
 	if ($("#topbar").hasClass("visible-topbar")) {
-		$("#topbar").removeClass("visible-topbar");
+		$("#topbar").removeClass("visible-topbar"); // hide topbar
 		$("#topbar").addClass("hidden-topbar");
+		$(".content").addClass("move-up"); // move content up
 	} else {
-		$("#topbar").removeClass("hiden-topbar");
+		$("#topbar").removeClass("hiden-topbar");	//show topbar
 		$("#topbar").addClass("visible-topbar");
+		$(".content").removeClass("move-up"); // move content down
 	}
-
 	if ($("#arrow").hasClass("up")) {
 		$("#arrow").removeClass("up");
 		$("#arrow").addClass("down");
@@ -358,10 +355,13 @@ Ember.View.reopen({
 
 		// hide input if not first use
 		if (!firstUse) {
+			toggleInput();
+			/*
 			$("#topbar").removeClass("visible-topbar");
 			$("#topbar").addClass("hidden-topbar");
 			$("#arrow").removeClass("up");
 			$("#arrow").addClass("down");
+			*/
 		}
 
 	}

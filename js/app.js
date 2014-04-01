@@ -72,8 +72,13 @@ App.IndexRoute = Ember.Route.extend({
 		rssfeed = getQueryVariable();
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed) + "&t=" + new Date().getTime()).then(function (data) {
+			if (data.responseData == null) {
+					clearLocalStorage();
+					document.location.reload();
+			}
 			if (data.responseData.feed && data.responseData.feed.entries) {
 				//alert("Localstorage: " + localStorage.getItem("rssfeed"));
+					
 				$.each(data.responseData.feed.entries, function (i, e) {
 					/*
 					console.log("------------------------");

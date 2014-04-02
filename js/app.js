@@ -67,8 +67,6 @@ var firstUse = true;
 App.IndexRoute = Ember.Route.extend({
 	model: function () {
 		if (localStorage.getItem("rssfeed") != null) firstUse = false;
-		//alert (localStorage.getItem("rssfeed"));
-
 		rssfeed = getQueryVariable();
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed) + "&t=" + new Date().getTime()).then(function (data) {
@@ -207,25 +205,28 @@ function groupByDays(a) {
 // Gets RSS feed from parameter in URL, retruns hardcoded feed if there is none in the URL
 function getQueryVariable() {
 	var query = window.location.search.substring(1);
-	var variable = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
+	var param = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
 	var stored = localStorage.getItem("rssfeed");
 
+	// if the parameter in the url is one of the keys from the urls array, use the corresponding url
 	for (var key in urls) {
 		var item = urls[key];
-		if (variable === key) {
-			variable = item;
+		if (param === key) {
+			param = item;
 		}
 	}
-	if (variable == null) {
-		if (stored !== null) {
-			variable = stored;
+	// if there is no parameter
+	if (param == null) {
+		if (stored != null) {
+			param = stored; // use localstorage url
+			$("#url-input").attr("value", stored);
 		} else {
-			variable = urls["tb"];
+			param = urls["tb"]; // use default fallback url
 		}
 	}
-	localStorage.setItem("rssfeed", variable);
-	console.log("request url: " + variable);
-	return variable;
+	localStorage.setItem("rssfeed", param);
+	console.log("request url: " + param);
+	return param;
 }
 
 function clearLocalStorage() {
@@ -308,8 +309,8 @@ function inputUrl() {
 	}
 }
 
-function toggleInput() {
-	if ($("#topbar").hasClass("visible-topbar")) {
+function toggleInput(alwaysHide) {
+	if ($("#topbar").hasClass("visible-topbar") || alwaysHide) {
 		$("#topbar").removeClass("visible-topbar"); // hide topbar
 		$("#topbar").addClass("hidden-topbar");
 		$(".content").addClass("move-up"); // move content up
@@ -348,7 +349,7 @@ Ember.View.reopen({
 
 		// hide input if not first use
 		if (!firstUse) {
-			toggleInput();
+			toggleInput(true); // alwaysHide = true
 		}
 
 	}

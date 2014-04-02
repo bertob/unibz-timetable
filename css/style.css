@@ -193,7 +193,6 @@ input {
 	height: 8em;
 	width: inherit;
 	padding-top: 1em;
-	background-color: #eee;
 	z-index: 100000;
 	-webkit-animation-duration: 0.7s !important;
 	animation-duration: 0.7s !important;
@@ -250,11 +249,6 @@ input {
 	.url-input {
 		width: 68%;
 	}
-}
-.url-button {
-	width: 25%;
-	background-color: #999;
-	color: #fff;
 }
 .icon {
 	position: relative;

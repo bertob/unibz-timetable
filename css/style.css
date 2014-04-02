@@ -59,6 +59,9 @@ a:hover,
 a:focus {
 	text-decoration: underline;
 }
+img {
+	
+}
 button,
 input {
 	border-radius: 0;
@@ -210,11 +213,13 @@ input {
 }
 .hidden-topbar {
 	transform: translateY(-10em);
+	-webkit-transform: translateY(-10em);
 	transition: transform 0.3s ease-out;
 	-webkit-transition: transform 0.3s ease-out;
 }
 .visible-topbar {
 	transform: translateY(0);
+	-webkit-transform: translateY(0);
 	transition: transform 0.3s ease-out;
 	-webkit-transition: transform 0.3s ease-out;
 }
@@ -257,26 +262,15 @@ input {
 	height: 3em;
 	margin-left: 1em;
 	padding: 0.1em;
-	//transform: translateY(1.2em);
-	-webkit-transform: translateY(1.2em);
 	cursor: pointer;
 }
-.icon:hover {
-	//background-color: #ddd;
+.icon:active {
+	transform: translateY(0.15em);
+	-webkit-transform: translateY(0.15em);
+	transition: transform 0.1s ease-out;
+	-webkit-transition: transform 0.1s ease-out;
+}
 
-}
-.update {} .up {
-	transform: rotate(0deg);
-	-webkit-transform: rotate(0deg);
-	transition: transform 0.2s ease-out;
-	-webkit-transition: transform 0.2s ease-out;
-}
-.down {
-	transform: rotate(180deg);
-	-webkit-transform: rotate(180deg);
-	transition: transform 0.2s ease-out;
-	-webkit-transition: transform 0.2s ease-out;
-}
 /* ######## NOSCRIPT ########*/
 
 .nsc {

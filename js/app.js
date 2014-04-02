@@ -318,13 +318,6 @@ function toggleInput() {
 		$("#topbar").addClass("visible-topbar");
 		$(".content").removeClass("move-up"); // move content down
 	}
-	if ($("#arrow").hasClass("up")) {
-		$("#arrow").removeClass("up");
-		$("#arrow").addClass("down");
-	} else {
-		$("#arrow").removeClass("down");
-		$("#arrow").addClass("up");
-	}
 }
 
 App.IndexView = Ember.View.extend({
@@ -356,12 +349,6 @@ Ember.View.reopen({
 		// hide input if not first use
 		if (!firstUse) {
 			toggleInput();
-			/*
-			$("#topbar").removeClass("visible-topbar");
-			$("#topbar").addClass("hidden-topbar");
-			$("#arrow").removeClass("up");
-			$("#arrow").addClass("down");
-			*/
 		}
 
 	}

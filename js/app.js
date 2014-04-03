@@ -10,10 +10,11 @@ var googleApiUrl = "//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=" + 
 
 var urls = {
 	"tb": "https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?showtype=0&sfdid=VJ6o9VkicIEJBLePjA936w%3d%3d&format=rss",
+	"marcog": "https://aws.unibz.it/students-zone/itt/export/exportitt.aspx?showtype=0&sfdid=ueP3VyjCXPmJYrwtGVvZWg%3d%3d&format=rss",
 	// Computer Schience Bachelor
-	"cs1": "",
-	"cs2": "",
-	"cs3": "",
+	"cs1": "http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dep=1045&spoid=13402&format=rss",
+	"cs2": "http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dep=1045&spoid=13403&format=rss",
+	"cs3": "http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dep=1045&spoid=13404&format=rss",
 	// Mechanical Engineering Bachelor
 	"me1": "",
 	"me2": "",
@@ -22,8 +23,10 @@ var urls = {
 	"da1": "",
 	"da2": "",
 	"da3": "",
-	// Management
-
+	// Economics and Management Bachelor
+	"em1": "http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=12723%2c16964&dep=1043&spoid=16967&format=rss",
+	"em2": "",
+	"em3": "",
 	// PPE
 };
 // Economy:
@@ -51,6 +54,9 @@ var colors = ["#da4939",
 							"#9c3964",
 							"#964042",
 				 			];
+var marColors = [	"#28c61b",
+									"#159fa0",
+						 		];
 var newColors = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 var usedColors = [];
@@ -67,6 +73,8 @@ var errorMsg = {
 	"network": "Seems like there are some issues with your network connection. Falling back to the last saved state of the site, so the information below may be outdated.",
 	"url": "It seems like your URL is not valid. Perhaps you copied the timetable URL instead of the RSS feed URL?<br><br>The timetable has been reset, please try entering a new RSS feed URL.",
 };
+	
+var marcoMode = false;
 
 
 App.IndexRoute = Ember.Route.extend({
@@ -225,6 +233,13 @@ function getQueryVariable() {
 	var param = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
 	var stored = localStorage.getItem("rssfeed");
 	var valid = localStorage.getItem("validUrl");
+	
+	if(param === "marcog") {
+		marcoMode = true;
+	}
+	else {
+		marcoMode =false;
+	}
 
 	// if the parameter in the url is one of the keys from the urls array, use the corresponding url
 	for (var key in urls) {
@@ -371,8 +386,9 @@ Ember.View.reopen({
 			function () {
 				var elem = $(this);
 				var idColor = $(this).attr("id").split("script")[2];
-				idColor = idColor.substr(1, idColor.length - 2);
+				idColor = idColor.substr(1, idColor.length - 2); 
 				var colorCode = colors[idColor];
+				if (marcoMode) colorCode = marColors[idColor];
 				$(this).children().css("color", colorCode);
 				$(this).children().children().css("color", colorCode);
 			}
@@ -385,7 +401,7 @@ Ember.View.reopen({
 
 		// show error messages
 		message = localStorage.getItem("error");
-		if (message != "") {
+		if (message != "" && !firstUse) {
 			toggleError(message, true);
 			localStorage.setItem("error", "");
 		}

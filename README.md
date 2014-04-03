@@ -30,7 +30,7 @@ http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dep=4182&spoid=17529&
 ```
 
 ####3. Paste the URL in the input on the page
-Now [open the application](tobiasbernard.com/unibz-timetable) and paste the URL you copied before into the input field on top of the page.
+Now [open the application](http://tobiasbernard.com/unibz-timetable) and paste the URL you copied before into the input field on top of the page.
 The page will now reload and display the data from your RSS feed. Since the URL is saved in your Browser's localStorage, it persists across page reloads.
 
 ***Note:***

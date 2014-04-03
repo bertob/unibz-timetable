@@ -59,10 +59,7 @@ a:hover,
 a:focus {
 	text-decoration: underline;
 }
-img {
-	
-}
-button,
+img {} button,
 input {
 	border-radius: 0;
 	border: none;
@@ -103,11 +100,11 @@ input {
 	transform: translateY(5em);
 	-webkit-transform: translateY(5em);
 	transition: transform 0.3s ease-out;
-	-webkit-transition: transform 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
 }
 .move-up {
 	transform: translateY(0em);
-	-webkit-transform: translateY(0em);	
+	-webkit-transform: translateY(0em);
 }
 .day {
 	margin: 3em 0;
@@ -193,7 +190,7 @@ input {
 	height: 8em;
 	width: inherit;
 	padding-top: 1em;
-	z-index: 100000;
+	z-index: 10000;
 	-webkit-animation-duration: 0.7s !important;
 	animation-duration: 0.7s !important;
 }
@@ -211,16 +208,16 @@ input {
 	visibility: visible;
 }
 .hidden-topbar {
-	transform: translateY(-10em);
-	-webkit-transform: translateY(-10em);
+	transform: translateY(-150%);
+	-webkit-transform: translateY(-120%);
 	transition: transform 0.3s ease-out;
-	-webkit-transition: transform 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
 }
 .visible-topbar {
 	transform: translateY(0);
 	-webkit-transform: translateY(0);
 	transition: transform 0.3s ease-out;
-	-webkit-transition: transform 0.3s ease-out;
+	-webkit-transition: all 0.3s ease-out;
 }
 .url-input {
 	width: 74%;
@@ -258,13 +255,16 @@ input {
 	padding: 0.1em;
 	cursor: pointer;
 }
-.icon:active {
+.icon:active,
+error-close:active {
 	transform: translateY(0.15em);
 	-webkit-transform: translateY(0.15em);
 	transition: transform 0.1s ease-out;
-	-webkit-transition: transform 0.1s ease-out;
+	-webkit-transition: all 0.1s ease-out;
 }
-
+.update {
+	//transform: translateX(-5em);
+}
 /* ######## NOSCRIPT ########*/
 
 .nsc {
@@ -304,4 +304,33 @@ input {
 	margin: 1em 0;
 	font-size: 1.2em;
 	font-weight: 400;
+}
+/* ######## ERRORS ########*/
+
+.error {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding: 2em 0 2.5em;
+	background-color: #555;
+	z-index: 1000000;
+}
+.error * {
+	position: relative;
+	color: #fff;
+	margin-bottom: 0;
+}
+.error-head {
+	display: inline-block;
+	margin-bottom: 0.7em;
+	font-size: 2em;
+}
+.error-p {
+	font-size: 1.2em;
+}
+.error-close {
+	position: absolute;
+	right: 0;
+	top: 0em;
+	cursor: pointer;
 }

@@ -25,7 +25,7 @@ var urls = {
 	// Management
 
 	// PPE
-}
+};
 // Economy:
 // http://aws.unibz.it/risweb/timetable.aspx?showtype=0&acy=7&dgroid=12724%2c16965&dep=1043&spoid=16966&format=rss
 
@@ -41,7 +41,7 @@ var colors = ["#da4939",
 							"#4b5464",
 							"#53a5a6",
 							"#428141",
-							"#d1a635", ////	
+							"#d1a635",
 							"#78a03e",
 							"#d97726",
 							"#488092",
@@ -62,6 +62,11 @@ var titleBlackList = [
 							"Systems",
 							];
 var firstUse = true;
+var error = "";
+var errorMsg = {
+	"network": "Seems like there are some issues with your network connection. Falling back to the last saved state of the site, so the information below may be outdated.",
+	"url": "It seems like your URL is not valid. Perhaps you copied the timetable URL instead of the RSS feed URL?<br>The timetable has been reset to the default for now, please try entering a new RSS feed URL.",
+};
 
 
 App.IndexRoute = Ember.Route.extend({
@@ -70,10 +75,20 @@ App.IndexRoute = Ember.Route.extend({
 		rssfeed = getQueryVariable();
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed) + "&t=" + new Date().getTime()).then(function (data) {
-			if (data.responseData == null) {
+			
+			console.log(data.responseStatus);
+			if (data.responseStatus !== 200) {
 				clearLocalStorage();
+				if (data.responseStatus === 400) {
+					error = errorMsg.url;
+				}
+				if (data.responseStatus === 404) {
+					error = errorMsg.network;
+				}
+				localStorage.setItem("error", error);
 				document.location.reload();
 			}
+	
 			if (data.responseData.feed && data.responseData.feed.entries) {
 				//alert("Localstorage: " + localStorage.getItem("rssfeed"));
 
@@ -221,7 +236,7 @@ function getQueryVariable() {
 			param = stored; // use localstorage url
 			$("#url-input").attr("value", stored);
 		} else {
-			param = urls["tb"]; // use default fallback url
+			param = urls.tb; // use default fallback url
 		}
 	}
 	localStorage.setItem("rssfeed", param);
@@ -278,14 +293,15 @@ function addColor(newCourseTitle) {
 		console.log("Adding new color");
 		// Course doesn"t exitst yet, assign new color
 		var newHash = newCourseTitle.hashCode();
+		var newColorIndex;
 		if (newColors.length > 0) {
-			var newColorIndex = 0; //Math.floor(Math.random() * newColors.length);
+			newColorIndex = 0; //Math.floor(Math.random() * newColors.length);
 			//var newColorIndex = Math.floor(NewHash / colors.length);
 			hashColors[newHash] = newColors[newColorIndex];
 			newColors.remove(newColorIndex);
 			returnColor = hashColors[newHash];
 		} else {
-			var newColorIndex = Math.floor(Math.random() * colors.length);
+			newColorIndex = Math.floor(Math.random() * colors.length);
 			hashColors[newHash] = newColorIndex;
 			returnColor = hashColors[newHash];
 		}
@@ -299,13 +315,9 @@ function inputUrl() {
 		localStorage.setItem("rssfeed", url);
 		document.location.reload();
 	} else {
-		//alert("yo");
-		//$(".topbar").each.removeClass("animated shake");
-		//alert("derp");
 		$(".topbar").addClass("shake animated");
 		$('.topbar').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-			$(this).removeClass("animated shake");
-		});
+		$(this).removeClass("animated shake");});
 	}
 }
 
@@ -315,9 +327,22 @@ function toggleInput(alwaysHide) {
 		$("#topbar").addClass("hidden-topbar");
 		$(".content").addClass("move-up"); // move content up
 	} else {
-		$("#topbar").removeClass("hiden-topbar");	//show topbar
+		$("#topbar").removeClass("hiden-topbar"); //show topbar
 		$("#topbar").addClass("visible-topbar");
 		$(".content").removeClass("move-up"); // move content down
+	}
+}
+
+function toggleError(message, alwaysShow) {
+	console.log();
+	if ($("#error").hasClass("hidden-topbar") || alwaysShow) {
+		$("#error-msg").html(message);
+		$("#error").removeClass("hidden-topbar"); //show topbar
+		$("#error").addClass("visible-topbar");
+	} else if ($("#error").hasClass("visible-topbar")) {
+		$("#error").removeClass("visible-topbar"); // hide topbar
+		$("#error").addClass("hidden-topbar");
+		$("#error-msg").html(message);
 	}
 }
 
@@ -352,6 +377,13 @@ Ember.View.reopen({
 			toggleInput(true); // alwaysHide = true
 		}
 
+		// show error messages
+		message = localStorage.getItem("error");
+		if (message != "") {
+			toggleError(message, true);
+			localStorage.setItem("error", "");
+		}
+
 	}
 });
 
@@ -375,7 +407,6 @@ function lcs(lcstest, lcstarget) {
 		}
 		if (matchfound == 1) {
 			return result;
-			break;
 		}
 		lsclen = lsclen - 1;
 	}

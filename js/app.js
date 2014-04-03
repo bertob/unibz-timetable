@@ -65,7 +65,7 @@ var firstUse = true;
 var error = "";
 var errorMsg = {
 	"network": "Seems like there are some issues with your network connection. Falling back to the last saved state of the site, so the information below may be outdated.",
-	"url": "It seems like your URL is not valid. Perhaps you copied the timetable URL instead of the RSS feed URL?<br>The timetable has been reset to the default for now, please try entering a new RSS feed URL.",
+	"url": "It seems like your URL is not valid. Perhaps you copied the timetable URL instead of the RSS feed URL?<br><br>The timetable has been reset, please try entering a new RSS feed URL.",
 };
 
 
@@ -75,7 +75,7 @@ App.IndexRoute = Ember.Route.extend({
 		rssfeed = getQueryVariable();
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed) + "&t=" + new Date().getTime()).then(function (data) {
-			
+
 			console.log(data.responseStatus);
 			if (data.responseStatus !== 200) {
 				clearLocalStorage();
@@ -87,8 +87,10 @@ App.IndexRoute = Ember.Route.extend({
 				}
 				localStorage.setItem("error", error);
 				document.location.reload();
+			} else {
+				localStorage.setItem("validUrl", rssfeed);
 			}
-	
+
 			if (data.responseData.feed && data.responseData.feed.entries) {
 				//alert("Localstorage: " + localStorage.getItem("rssfeed"));
 
@@ -222,6 +224,7 @@ function getQueryVariable() {
 	var query = window.location.search.substring(1);
 	var param = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
 	var stored = localStorage.getItem("rssfeed");
+	var valid = localStorage.getItem("validUrl");
 
 	// if the parameter in the url is one of the keys from the urls array, use the corresponding url
 	for (var key in urls) {
@@ -235,6 +238,8 @@ function getQueryVariable() {
 		if (stored != null) {
 			param = stored; // use localstorage url
 			$("#url-input").attr("value", stored);
+		} else if (valid != null) {
+			param = valid;
 		} else {
 			param = urls.tb; // use default fallback url
 		}
@@ -317,7 +322,8 @@ function inputUrl() {
 	} else {
 		$(".topbar").addClass("shake animated");
 		$('.topbar').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-		$(this).removeClass("animated shake");});
+			$(this).removeClass("animated shake");
+		});
 	}
 }
 

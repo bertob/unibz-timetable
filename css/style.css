@@ -220,38 +220,22 @@ input {
 	-webkit-transition: all 0.3s ease-out;
 }
 .url-input {
-	width: 74%;
+	width: 87%;
 }
-@media screen and (min-width: 850px) {
-	.url-input {
-		width: 82%;
-	}
-}
-@media screen and (min-width: 1000px) {
-	.url-input {
-		width: 78%;
-	}
-}
-@media screen and (min-width: 1200px) {
-	.url-input {
-		width: 83%;
-	}
-}
-@media screen and (min-width: 1400px) {
+@media screen and (max-width: 440px) {
 	.url-input {
 		width: 85%;
 	}
 }
-@media screen and (max-width: 440px) {
+@media screen and (min-width: 1000px) {
 	.url-input {
-		width: 68%;
+		width: 90%;
 	}
 }
 .icon {
 	position: relative;
 	top: 1.5em;
 	height: 3em;
-	margin-left: 1em;
 	padding: 0.1em;
 	cursor: pointer;
 }
@@ -263,7 +247,8 @@ error-close:active {
 	-webkit-transition: all 0.1s ease-out;
 }
 .update {
-	//transform: translateX(-5em);
+	margin-left: -3.8em;
+	background-color: #fff;
 }
 /* ######## NOSCRIPT ########*/
 

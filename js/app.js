@@ -54,7 +54,7 @@ var colors = ["#da4939",
 							"#9c3964",
 							"#964042",
 				 			];
-var marColors = [	"#5de484",
+var marColors = ["#5de484",
 									"#7df3cb",
 									"#81c5ff",
 									"#0f96b6",
@@ -78,20 +78,20 @@ var errorMsg = {
 	"network": "Seems like there are some issues with your network connection. Falling back to the last saved state of the site, so the information below may be outdated.",
 	"url": "It seems like your URL is not valid. Perhaps you copied the timetable URL instead of the RSS feed URL?<br><br>The timetable has been reset, please try entering a new RSS feed URL.",
 };
-	
+
 var marcoMode = false;
 
 
 App.IndexRoute = Ember.Route.extend({
 	model: function () {
-		if (localStorage.getItem("rssfeed") != null) firstUse = false;
+		if (localStorage.getItem("rssfeed") != "") firstUse = false;
 		rssfeed = getQueryVariable();
 
 		return Ember.$.getJSON(document.location.protocol + googleApiUrl + encodeURIComponent(rssfeed) + "&t=" + new Date().getTime()).then(function (data) {
 
 			console.log(data.responseStatus);
 			if (data.responseStatus !== 200) {
-				clearLocalStorage();
+				clearStoredUrls();
 				if (data.responseStatus === 400) {
 					error = errorMsg.url;
 				}
@@ -99,6 +99,14 @@ App.IndexRoute = Ember.Route.extend({
 					error = errorMsg.network;
 				}
 				localStorage.setItem("error", error);
+				var reloads = parseInt(localStorage.getItem("reloads"));
+				if (reloads == null) {
+					localStorage.setItem("reloads", 1);
+				} else if (reloads < 5) {
+					localStorage.setItem("reloads", reloads + 1);
+				} else {
+					resetApp();
+				}
 				document.location.reload();
 			} else {
 				localStorage.setItem("validUrl", rssfeed);
@@ -238,12 +246,11 @@ function getQueryVariable() {
 	var param = query.split(/=(.+)?/)[1]; //split along fist = and save the part after it
 	var stored = localStorage.getItem("rssfeed");
 	var valid = localStorage.getItem("validUrl");
-	
-	if(param === "marcog") {
+
+	if (param === "marcog") {
 		marcoMode = true;
-	}
-	else {
-		marcoMode =false;
+	} else {
+		marcoMode = false;
 	}
 
 	// if the parameter in the url is one of the keys from the urls array, use the corresponding url
@@ -259,7 +266,7 @@ function getQueryVariable() {
 			param = stored; // use localstorage url
 			$("#url-input").attr("value", stored);
 		} else if (valid != null) {
-			param = valid;
+			param = valid; // use last valid URL value
 		} else {
 			param = urls.tb; // use default fallback url
 		}
@@ -269,8 +276,20 @@ function getQueryVariable() {
 	return param;
 }
 
-function clearLocalStorage() {
+function resetApp() {
 	localStorage.removeItem("rssfeed");
+	localStorage.removeItem("validUrl");
+	localStorage.removeItem("error");
+	localStorage.removeItem("reloads");
+}
+
+function clearStoredUrls() {
+	localStorage.removeItem("rssfeed");
+	localStorage.removeItem("validUrl");
+}
+
+function clearErrors() {
+	localStorage.removeItem("error");
 }
 
 function simplifyTitle(title) {
@@ -336,7 +355,7 @@ function addColor(newCourseTitle) {
 
 function inputUrl() {
 	var url = document.getElementById("url-input").value;
-	if (url !== "" && url.length > 30) {
+	if (url !== "" && url.length > 30 && (url.indexOf("unibz.it") !== -1)) {
 		localStorage.setItem("rssfeed", url);
 		document.location.reload();
 	} else {
@@ -360,7 +379,7 @@ function toggleInput(alwaysHide) {
 }
 
 function toggleError(message, alwaysShow) {
-	console.log();
+	console.log("ERR! show: " + alwaysShow + "  msg: " + message);
 	if ($("#error").hasClass("hidden-topbar") || alwaysShow) {
 		$("#error-msg").html(message);
 		$("#error").removeClass("hidden-topbar"); //show topbar
@@ -391,7 +410,7 @@ Ember.View.reopen({
 			function () {
 				var elem = $(this);
 				var idColor = $(this).attr("id").split("script")[2];
-				idColor = idColor.substr(1, idColor.length - 2); 
+				idColor = idColor.substr(1, idColor.length - 2);
 				var colorCode = colors[idColor];
 				if (marcoMode) colorCode = marColors[idColor];
 				$(this).children().css("color", colorCode);
@@ -406,7 +425,7 @@ Ember.View.reopen({
 
 		// show error messages
 		message = localStorage.getItem("error");
-		if (message != "" && !firstUse) {
+		if (message != null && !firstUse) {
 			toggleError(message, true);
 			localStorage.setItem("error", "");
 		}

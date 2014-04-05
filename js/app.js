@@ -173,7 +173,7 @@ App.IndexRoute = Ember.Route.extend({
 					room = room.substr(0, 4);
 					room = room.substr(0, 1) + " " + room.substr(1, room.length);
 
-					color = addColor(course);
+					color = addColor(course, prof);
 
 					console.log("----------------------------------");
 					console.log("date: " + date + "; \ntime: " + time + "; \ncourse: " + course + "; \nroom: " + room + "; \nprof: " + prof + "; \ncolor: " + color);
@@ -316,7 +316,7 @@ function checkBlacklist(substring) {
 	return returnValue;
 }
 
-function addColor(newCourseTitle) {
+function addColor(newCourseTitle, newCourseProf) {
 	var returnColor;
 	var existingColor = false;
 	formattedData.some(function (oldCourse) {
@@ -325,8 +325,9 @@ function addColor(newCourseTitle) {
 		//console.log("new: " + newTitle + "  old: " + oldTitle);
 		var substring = lcs(oldTitle, newTitle);
 		//console.log((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3));
-		if ((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3)) {
-			// Course already exists and has a color
+		console.log("is project: " + (oldCourse.prof === newCourseProf === "Project"));
+		if (((substring.length >= Math.floor(newTitle.length / 3)) && checkBlacklist(substring) && (substring.length > 3)) || ((oldCourse.prof === newCourseProf) && (newCourseProf === "Project"))) {
+			// Course already exists and has a color, or it is a design project
 			var existingHash = oldCourse.title.hashCode();
 			returnColor = hashColors[existingHash];
 			existingColor = true;
@@ -426,8 +427,8 @@ Ember.View.reopen({
 		// show error messages
 		message = localStorage.getItem("error");
 		if (message != null && !firstUse) {
-			toggleError(message, true);
-			localStorage.setItem("error", "");
+			//toggleError(message, true);
+			localStorage.setItem("error", null);
 		}
 
 	}

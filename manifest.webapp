@@ -1,0 +1,23 @@
+{
+	"name": "Unibz Timetable",
+	"description": "Timetable app for the University of Bolzano",
+	"version": "0.1",
+	"launch_path": "/",
+	"icons": {
+		"32": "/img/32.png",
+		"60": "/img/60.png",
+		"84": "/img/84.png",
+		"90": "/img/90.png",
+		"120": "/img/120.png",
+		"120": "/img/126.png",
+		"128": "/img/128.png",
+		"142": "/img/142.png",
+		"189": "/img/189.png",
+		"256": "/img/256.png",
+		"284": "/img/284.png"
+	},
+	"developer": {
+		"name": "Tobias Bernard",
+		"url": "http://tobiasbernard.com/"
+	}
+}
